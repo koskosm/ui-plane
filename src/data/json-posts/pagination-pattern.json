@@ -1,0 +1,11 @@
+{
+  "id": 9,
+  "title": "Pagination Pattern",
+  "slug": "pagination-pattern",
+  "excerpt": "Breaking content into manageable pages for improved navigation.",
+  "category": "UI Patterns",
+  "tags": ["Navigation", "Content Organization"],
+  "content": "<p>Pagination is a design pattern used to divide content into separate pages. It's commonly used in search results, product listings, and long-form content to make large amounts of information more manageable and easier to navigate.</p><h2>Key Components</h2><ul><li>Page numbers</li><li>Previous and Next buttons</li><li>First and Last page links</li><li>Items per page selector</li></ul><h2>Best Practices</h2><ol><li>Keep navigation simple and intuitive</li><li>Show the total number of pages</li><li>Highlight the current page</li><li>Consider using 'Load More' for infinite scrolling alternatives</li><li>Ensure mobile responsiveness</li></ol>",
+  "thumbnail": "/images/pagination-thumb.jpg",
+  "heroImage": "/images/pagination-hero.jpg"
+}

@@ -1,0 +1,11 @@
+{
+  "id": 18,
+  "title": "Color Theory in UI Design",
+  "slug": "color-theory-in-ui",
+  "excerpt": "Using color effectively to enhance user interfaces and user experience.",
+  "category": "UI Practices",
+  "tags": ["Visual Design", "User Experience"],
+  "content": "<p>Color theory in UI design involves understanding how colors interact and how they can be used to convey meaning, evoke emotions, and create visually appealing interfaces.</p><h2>Key Concepts</h2><ul><li>Color wheel and color relationships</li><li>Color psychology and cultural associations</li><li>Color accessibility and contrast</li><li>Color schemes (monochromatic, analogous, complementary, etc.)</li></ul><h2>Best Practices</h2><ol><li>Use color to guide attention and create hierarchy</li><li>Ensure sufficient contrast for readability</li><li>Consider color blindness in your design choices</li><li>Use color consistently throughout your interface</li><li>Limit your color palette to maintain cohesion</li><li>Test your color choices on different devices and in different lighting conditions</li></ol>",
+  "thumbnail": "/images/color-theory-thumb.jpg",
+  "heroImage": "/images/color-theory-hero.jpg"
+}

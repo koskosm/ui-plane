@@ -1,0 +1,11 @@
+{
+  "id": 4,
+  "title": "Breadcrumb Navigation Pattern",
+  "slug": "breadcrumb-navigation-pattern",
+  "excerpt": "Helping users understand and navigate hierarchical structures.",
+  "category": "UI Patterns",
+  "tags": ["Navigation", "Information Architecture"],
+  "content": "<p>Breadcrumb navigation is a secondary navigation scheme that reveals the user's location in a website or web application. It provides links back to each previous page the user navigated through to get to the current page.</p><h2>Types of Breadcrumbs</h2><ul><li>Location-based breadcrumbs</li><li>Path-based breadcrumbs</li><li>Attribute-based breadcrumbs</li></ul><h2>Best Practices</h2><ol><li>Keep it simple and concise</li><li>Use clear separators between levels</li><li>Make each level clickable</li><li>Consider mobile responsiveness</li></ol>",
+  "thumbnail": "/images/breadcrumb-thumb.jpg",
+  "heroImage": "/images/breadcrumb-hero.jpg"
+}

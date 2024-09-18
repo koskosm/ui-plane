@@ -1,0 +1,11 @@
+{
+  "id": 8,
+  "title": "Skeleton Screen Pattern",
+  "slug": "skeleton-screen-pattern",
+  "excerpt": "Improving perceived loading times and user experience.",
+  "category": "UI Patterns",
+  "tags": ["Loading", "User Experience"],
+  "content": "<p>Skeleton screens are a UI pattern used to indicate that content is loading by displaying a simplified wireframe version of the page. Instead of showing a loading spinner or blank page, skeleton screens provide a preview of the page's layout, improving perceived performance and user experience.</p><h2>Key Benefits</h2><ul><li>Reduces perceived loading time</li><li>Provides context about the upcoming content</li><li>Creates a smoother, less jarring loading experience</li></ul><h2>Implementation Tips</h2><ol><li>Design skeleton elements to closely resemble the actual content layout</li><li>Use subtle animation to indicate loading</li><li>Gradually reveal content as it becomes available</li><li>Ensure proper communication to screen readers</li></ol>",
+  "thumbnail": "/images/skeleton-screen-thumb.jpg",
+  "heroImage": "/images/skeleton-screen-hero.jpg"
+}

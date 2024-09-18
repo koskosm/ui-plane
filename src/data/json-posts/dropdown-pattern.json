@@ -1,0 +1,11 @@
+{
+  "id": 10,
+  "title": "Dropdown Pattern",
+  "slug": "dropdown-pattern",
+  "excerpt": "Providing a compact way to present multiple options.",
+  "category": "UI Patterns",
+  "tags": ["Navigation", "Form Design"],
+  "content": "<p>The dropdown pattern, also known as a select menu, is a UI element that allows users to choose one option from a list. It's a space-efficient way to present multiple options, especially when screen space is limited.</p><h2>Use Cases</h2><ul><li>Selecting from a list of predefined options</li><li>Filtering content</li><li>Navigation menus on mobile devices</li></ul><h2>Best Practices</h2><ol><li>Use clear and descriptive labels</li><li>Organize options in a logical order</li><li>Provide a default selection when appropriate</li><li>Consider using autocomplete for long lists</li><li>Ensure keyboard accessibility</li></ol>",
+  "thumbnail": "/images/dropdown-thumb.jpg",
+  "heroImage": "/images/dropdown-hero.jpg"
+}

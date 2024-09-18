@@ -1,0 +1,11 @@
+{
+  "id": 12,
+  "title": "Form Validation Pattern",
+  "slug": "form-validation-pattern",
+  "excerpt": "Ensuring data integrity and improving user experience in forms.",
+  "category": "UI Patterns",
+  "tags": ["Form Design", "User Experience"],
+  "content": "<p>Form validation is a UI pattern used to check user input in a form and provide feedback on errors or successful submission. It helps ensure data integrity and improves the overall user experience by preventing errors and guiding users to correct input.</p><h2>Key Principles</h2><ul><li>Immediate feedback</li><li>Clear error messages</li><li>Positive reinforcement</li><li>Accessible design</li></ul><h2>Best Practices</h2><ol><li>Validate in real-time where appropriate</li><li>Provide specific and helpful error messages</li><li>Use color and icons to reinforce messaging</li><li>Indicate both errors and successful validation</li><li>Ensure form is submittable only when all required fields are valid</li></ol>",
+  "thumbnail": "/images/form-validation-thumb.jpg",
+  "heroImage": "/images/form-validation-hero.jpg"
+}

@@ -1,0 +1,11 @@
+{
+  "id": 11,
+  "title": "Tooltip Pattern",
+  "slug": "tooltip-pattern",
+  "excerpt": "Providing additional information without cluttering the interface.",
+  "category": "UI Patterns",
+  "tags": ["Information Display", "User Experience"],
+  "content": "<p>Tooltips are small, informative messages that appear when a user interacts with an element in a graphical user interface. They provide additional information or clarification without cluttering the main interface.</p><h2>Key Features</h2><ul><li>Contextual information on hover or focus</li><li>Brief and concise content</li><li>Non-intrusive design</li></ul><h2>Implementation Guidelines</h2><ol><li>Keep content short and to the point</li><li>Position tooltips logically in relation to the trigger element</li><li>Ensure tooltips are keyboard accessible</li><li>Use consistent styling across your interface</li><li>Consider touch interfaces in your design</li></ol>",
+  "thumbnail": "/images/tooltip-thumb.jpg",
+  "heroImage": "/images/tooltip-hero.jpg"
+}

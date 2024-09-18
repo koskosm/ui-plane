@@ -1,0 +1,11 @@
+{
+  "id": 16,
+  "title": "Responsive Design",
+  "slug": "responsive-design",
+  "excerpt": "Creating flexible layouts that adapt to various screen sizes and devices.",
+  "category": "UI Practices",
+  "tags": ["Layout", "Mobile Design"],
+  "content": "<p>Responsive design is an approach to web design that makes web pages render well on a variety of devices and window or screen sizes. It's essential in today's multi-device world.</p><h2>Key Principles</h2><ul><li>Fluid grids</li><li>Flexible images</li><li>Media queries</li><li>Mobile-first approach</li></ul><h2>Best Practices</h2><ol><li>Design with flexible layouts that can adapt to different screen sizes</li><li>Use relative units (%, em, rem) instead of fixed pixel values</li><li>Implement breakpoints to adjust layouts for different devices</li><li>Optimize images and media for different screen resolutions</li><li>Test your design on various devices and screen sizes</li></ol>",
+  "thumbnail": "/images/responsive-design-thumb.jpg",
+  "heroImage": "/images/responsive-design-hero.jpg"
+}

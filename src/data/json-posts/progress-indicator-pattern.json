@@ -1,0 +1,11 @@
+{
+  "id": 7,
+  "title": "Progress Indicator Pattern",
+  "slug": "progress-indicator-pattern",
+  "excerpt": "Providing visual feedback on task completion status.",
+  "category": "UI Patterns",
+  "tags": ["Feedback", "User Experience"],
+  "content": "<p>Progress indicators are UI elements that visualize the status of an ongoing process or task. They provide users with feedback about how much of a task has been completed and how much is left, helping to set expectations and reduce uncertainty.</p><h2>Types of Progress Indicators</h2><ul><li>Linear progress bars</li><li>Circular progress indicators</li><li>Step indicators</li><li>Skeleton screens</li></ul><h2>Best Practices</h2><ol><li>Ensure accuracy in progress representation</li><li>Provide real-time updates</li><li>Add context to the progress (e.g., time remaining)</li><li>Clearly indicate task completion</li><li>Handle errors gracefully</li></ol>",
+  "thumbnail": "/images/progress-indicator-thumb.jpg",
+  "heroImage": "/images/progress-indicator-hero.jpg"
+}

@@ -1,0 +1,11 @@
+{
+  "id": 15,
+  "title": "Search Interface Design",
+  "slug": "search-interface-design",
+  "excerpt": "Creating effective search experiences for users.",
+  "category": "UI Components",
+  "tags": ["User Experience", "Information Architecture"],
+  "content": "<p>Search is a critical component of many interfaces, allowing users to quickly find specific information or content. A well-designed search interface can significantly improve user experience and efficiency.</p><h2>Key Elements</h2><ul><li>Search input field</li><li>Search button or icon</li><li>Autocomplete or search suggestions</li><li>Search results display</li><li>Filtering and sorting options</li></ul><h2>Best Practices</h2><ol><li>Make the search bar easily discoverable</li><li>Use clear placeholder text in the search field</li><li>Implement autocomplete for faster searching</li><li>Provide relevant and quick search results</li><li>Allow for advanced search options when necessary</li><li>Optimize for both keyboard and touch input</li></ol>",
+  "thumbnail": "/images/search-interface-thumb.jpg",
+  "heroImage": "/images/search-interface-hero.jpg"
+}

@@ -1,0 +1,11 @@
+{
+  "id": 13,
+  "title": "Button Design",
+  "slug": "button-design",
+  "excerpt": "Creating effective and intuitive buttons for user interfaces.",
+  "category": "UI Components",
+  "tags": ["Interaction Design", "Visual Design"],
+  "content": "<p>Buttons are fundamental interactive elements in user interfaces. They allow users to take actions and make choices. Effective button design is crucial for usability and user experience.</p><h2>Key Principles</h2><ul><li>Clear affordance: Buttons should look clickable</li><li>Distinct states: Normal, hover, active, and disabled states</li><li>Consistent styling: Maintain visual consistency across your interface</li><li>Appropriate sizing: Ensure buttons are large enough for easy interaction</li></ul><h2>Best Practices</h2><ol><li>Use descriptive labels that clearly indicate the action</li><li>Prioritize button hierarchy with primary and secondary styles</li><li>Provide visual feedback on interaction</li><li>Ensure sufficient color contrast for accessibility</li><li>Consider mobile touch targets in your design</li></ol>",
+  "thumbnail": "/images/button-design-thumb.jpg",
+  "heroImage": "/images/button-design-hero.jpg"
+}
