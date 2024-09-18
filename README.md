@@ -40,10 +40,6 @@ UI Plane is a comprehensive resource for UI design patterns and best practices. 
 - `src/utils/`: Utility functions, including the JSON loader
 - `public/`: Static assets including images
 
-## Contributing
-
-We welcome contributions! Please see our [Contributing Guide](CONTRIBUTING.md) for more details.
-
 ## License
 
 This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details.
