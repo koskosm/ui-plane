@@ -2,14 +2,6 @@
 
 UI Plane is a comprehensive resource for UI design patterns and best practices. It serves as a flight checklist for developers and designers, offering insights and guidelines for creating effective user interfaces.
 
-## Features
-
-- Curated collection of UI design patterns
-- Searchable content
-- Categorized design topics
-- Responsive design for various devices
-- Interactive plane animation
-
 ## Getting Started
 
 ### Prerequisites
