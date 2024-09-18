@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { BrowserRouter as Router, Route, Routes, useParams, Link } from 'react-router-dom';
+import React, { useState, useEffect } from 'react';
+import { BrowserRouter as Router, Route, Routes, useParams, Link, useLocation } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import PostList from './components/PostList';
 import PostContent from './components/PostContent';
@@ -74,6 +74,11 @@ function App() {
 function PostPage({ posts }) {
   const { slug } = useParams();
   const post = posts.find(p => p.slug === slug);
+  const location = useLocation();
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [location]);
 
   if (!post) {
     return <div>Post not found</div>;
