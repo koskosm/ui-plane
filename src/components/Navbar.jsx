@@ -7,7 +7,10 @@ function Navbar() {
   return (
     <nav className="bg-white text-black p-4 sticky top-0 z-50 shadow-md">
       <div className="container mx-auto flex justify-between items-center">
-        <Link to="/" className="text-2xl font-bold hover:text-gray-700">UI Plane</Link>
+        <Link to="/" className="text-2xl font-bold hover:text-gray-700">
+          <span className="mr-2" role="img" aria-label="Airplane">✈️</span>
+          UI Plane
+        </Link>
         
         {/* Hamburger menu for small screens */}
         <div className="md:hidden">

@@ -7,6 +7,7 @@ import { posts } from './data/posts';
 import CategoryPage from './components/CategoryPage';
 import SearchBox from './components/SearchBox';
 import PlaneAnimation from './components/PlaneAnimation';
+import Footer from './components/Footer'; // Add this import
 
 function App() {
   const [searchResults, setSearchResults] = useState(null);
@@ -66,6 +67,7 @@ function App() {
             <Route path="/post/:slug" element={<PostPage posts={posts} />} />
           </Routes>
         </main>
+        <Footer /> {/* Add the Footer component here */}
       </div>
     </Router>
   );

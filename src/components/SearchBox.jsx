@@ -25,7 +25,7 @@ function SearchBox({ onSearch, searchTerm, onClear }) {
         <div className="flex">
           <input
             type="text"
-            placeholder="Search anything about design"
+            placeholder="Search anything about UI design"
             value={localSearchTerm}
             onChange={handleChange}
             className="w-full px-4 py-2 text-gray-700 bg-white border rounded-l-lg focus:outline-none focus:border-blue-500"
