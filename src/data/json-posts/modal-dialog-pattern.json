@@ -1,0 +1,13 @@
+{
+  "id": 24,
+  "title": "Modal Dialog Pattern",
+  "slug": "modal-dialog-pattern",
+  "excerpt": "Focusing user attention on important information or actions.",
+  "category": "UI Patterns",
+  "tags": ["Interaction", "Information Display"],
+  "content": "<p>Modal dialogs, also known as modal windows or popups, are UI elements that appear on top of the main content, typically dimming or disabling the background. They're used to focus the user's attention on important information or actions.</p><h2>Use Cases</h2><ul><li>Displaying critical information or warnings</li><li>Requesting user input or confirmation</li><li>Showing additional details without navigating away from the current page</li></ul><h2>Best Practices</h2><ol><li><strong>Clear purpose:</strong> Use modals sparingly and only for important interactions.</li><li><strong>Easy dismissal:</strong> Provide clear ways to close the modal, including clicking outside the dialog.</li><li><strong>Keyboard accessibility:</strong> Ensure the modal can be navigated and closed using keyboard controls.</li><li><strong>Responsive design:</strong> Adapt the modal size and layout for different screen sizes.</li></ol><p>When implemented correctly, modal dialogs can effectively guide user attention and streamline important interactions. However, overuse can lead to a disruptive user experience, so use them judiciously.</p>",
+  "thumbnail": "/images/modal-dialog-thumb.jpg",
+  "heroImage": "/images/modal-dialog-hero.jpg",
+  "emoji": "💬",
+  "backgroundColor": "#E6E6FA"
+}

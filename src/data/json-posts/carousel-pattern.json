@@ -5,7 +5,7 @@
   "excerpt": "Showcasing multiple items in a limited space.",
   "category": "UI Patterns",
   "tags": ["Layout", "Content Display"],
-  "content": "...",
+  "content": "<p>The carousel pattern, also known as a slider or slideshow, is a popular UI element used to display multiple pieces of content in a single, compact area. It allows users to browse through a series of items, images, or cards.</p><h2>Key Features</h2><ul><li><strong>Space-efficient:</strong> Displays multiple items in a limited space</li><li><strong>Interactive:</strong> Users can navigate through items manually or automatically</li><li><strong>Versatile:</strong> Can be used for various content types (images, text, cards)</li></ul><h2>Best Practices</h2><ol><li><strong>Clear navigation:</strong> Provide visible controls for manual navigation</li><li><strong>Autoplay with caution:</strong> If using autoplay, allow users to pause or stop it</li><li><strong>Responsive design:</strong> Ensure the carousel works well on different screen sizes</li><li><strong>Accessibility:</strong> Make sure the carousel is navigable via keyboard and screen readers</li><li><strong>Performance:</strong> Optimize image loading to prevent slow performance</li></ol><h2>Use Cases</h2><ul><li>Showcasing featured products or content</li><li>Displaying image galleries</li><li>Highlighting testimonials or reviews</li></ul><p>While carousels can be effective for certain use cases, it's important to use them judiciously. Research has shown that users often ignore rotating banners, so consider alternative layouts if the content is critical to your site's goals.</p>",
   "thumbnail": "/images/carousel-thumb.jpg",
   "heroImage": "/images/carousel-hero.jpg",
   "emoji": "🎠",

@@ -1,0 +1,13 @@
+{
+  "id": 23,
+  "title": "Hamburger Menu Pattern",
+  "slug": "hamburger-menu-pattern",
+  "excerpt": "Compact navigation solution for mobile interfaces.",
+  "category": "UI Patterns",
+  "tags": ["Navigation", "Mobile Design"],
+  "content": "<p>The hamburger menu, represented by three horizontal lines (☰), has become a ubiquitous UI pattern in mobile and responsive web design. It offers a compact way to hide navigation options, saving valuable screen space on smaller devices.</p><h2>Key Features</h2><ul><li><strong>Space-saving:</strong> Hides navigation items behind a single icon.</li><li><strong>Recognizable:</strong> Users have become familiar with this pattern across many applications.</li><li><strong>Expandable:</strong> Typically reveals a full-screen or side-panel menu when activated.</li></ul><h2>Best Practices</h2><ol><li><strong>Clear icon:</strong> Ensure the hamburger icon is easily recognizable and tappable.</li><li><strong>Smooth animation:</strong> Use transitions to smoothly reveal the hidden menu.</li><li><strong>Consistent placement:</strong> Usually positioned in the top-left or top-right corner of the screen.</li><li><strong>Consider alternatives:</strong> For critical navigation items, consider keeping them visible instead of hiding them in the menu.</li></ol><p>While the hamburger menu is widely used, it's important to consider its pros and cons for your specific application. In some cases, tab bars or other navigation patterns might be more suitable.</p>",
+  "thumbnail": "/images/hamburger-menu-thumb.jpg",
+  "heroImage": "/images/hamburger-menu-hero.jpg",
+  "emoji": "☰",
+  "backgroundColor": "#FFE4B5"
+}

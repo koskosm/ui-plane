@@ -1,0 +1,13 @@
+{
+  "id": 27,
+  "title": "Onboarding Patterns",
+  "slug": "onboarding-patterns",
+  "excerpt": "Guiding new users through your application effectively.",
+  "category": "UI Patterns",
+  "tags": ["User Experience", "Interaction Design"],
+  "content": "<p>Onboarding patterns are crucial for introducing new users to your application and helping them understand its key features and benefits. Effective onboarding can improve user retention and satisfaction.</p><h2>Common Patterns</h2><ul><li><strong>Welcome Tour:</strong> A guided walkthrough of key features</li><li><strong>Progressive Disclosure:</strong> Revealing features gradually as users need them</li><li><strong>Contextual Help:</strong> Providing guidance within the interface as users explore</li><li><strong>Empty States:</strong> Using initial blank screens to guide users on how to get started</li></ul><h2>Best Practices</h2><ol><li>Keep it concise and focused on key features</li><li>Allow users to skip or revisit the onboarding process</li><li>Use visual cues and animations to guide attention</li><li>Personalize the experience based on user preferences or roles</li><li>Measure and iterate based on user feedback and analytics</li></ol>",
+  "thumbnail": "/images/onboarding-thumb.jpg",
+  "heroImage": "/images/onboarding-hero.jpg",
+  "emoji": "🚀",
+  "backgroundColor": "#98FB98"
+}

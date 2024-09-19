@@ -1,0 +1,13 @@
+{
+  "id": 26,
+  "title": "Error Handling Patterns",
+  "slug": "error-handling-patterns",
+  "excerpt": "Designing user-friendly error messages and recovery flows.",
+  "category": "UI Patterns",
+  "tags": ["User Experience", "Interaction Design"],
+  "content": "<p>Error handling patterns are essential for creating a smooth user experience, even when things go wrong. Well-designed error messages can guide users to resolve issues and prevent frustration.</p><h2>Key Principles</h2><ul><li><strong>Clear Communication:</strong> Explain what went wrong in simple terms</li><li><strong>Actionable Guidance:</strong> Provide steps to resolve the error</li><li><strong>Appropriate Tone:</strong> Use a friendly, non-threatening tone</li><li><strong>Visual Cues:</strong> Use color and icons to draw attention</li></ul><h2>Common Patterns</h2><ol><li>Inline Validation for Forms</li><li>Toast Notifications for Non-Critical Errors</li><li>Modal Dialogs for Critical Errors</li><li>404 Pages for Missing Content</li><li>Empty States for No Data Scenarios</li></ol>",
+  "thumbnail": "/images/error-handling-thumb.jpg",
+  "heroImage": "/images/error-handling-hero.jpg",
+  "emoji": "⚠️",
+  "backgroundColor": "#FFA07A"
+}

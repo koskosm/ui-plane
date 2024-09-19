@@ -1,0 +1,13 @@
+{
+  "id": 28,
+  "title": "Dark Mode Design",
+  "slug": "dark-mode-design",
+  "excerpt": "Implementing effective dark mode interfaces.",
+  "category": "UI Practices",
+  "tags": ["Visual Design", "User Experience"],
+  "content": "<p>Dark mode design has become increasingly popular, offering users a low-light alternative that can reduce eye strain and save battery life on OLED screens. Implementing an effective dark mode requires careful consideration of color, contrast, and usability.</p><h2>Key Considerations</h2><ul><li><strong>Color Palette:</strong> Adjust your color scheme for dark backgrounds</li><li><strong>Contrast:</strong> Ensure sufficient contrast for readability</li><li><strong>Hierarchy:</strong> Maintain visual hierarchy in dark mode</li><li><strong>Consistency:</strong> Keep the user experience consistent between light and dark modes</li></ul><h2>Best Practices</h2><ol><li>Don't simply invert colors; design specifically for dark mode</li><li>Use dark grays instead of pure black for less eye strain</li><li>Reduce the overall number of colors used</li><li>Test your design in various lighting conditions</li><li>Provide an easy way for users to switch between modes</li></ol>",
+  "thumbnail": "/images/dark-mode-thumb.jpg",
+  "heroImage": "/images/dark-mode-hero.jpg",
+  "emoji": "🌙",
+  "backgroundColor": "#2F4F4F"
+}

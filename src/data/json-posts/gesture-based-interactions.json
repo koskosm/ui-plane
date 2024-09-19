@@ -1,0 +1,13 @@
+{
+  "id": 29,
+  "title": "Gesture-Based Interactions",
+  "slug": "gesture-based-interactions",
+  "excerpt": "Designing intuitive touch and motion-based interactions.",
+  "category": "UI Patterns",
+  "tags": ["Interaction Design", "Mobile Design"],
+  "content": "<p>Gesture-based interactions have become a fundamental part of mobile and touch-based interfaces. They allow users to interact with applications in a more natural and intuitive way, enhancing the overall user experience.</p><h2>Common Gestures</h2><ul><li><strong>Tap:</strong> Basic selection or activation</li><li><strong>Double Tap:</strong> Zoom or quick action</li><li><strong>Long Press:</strong> Contextual menus or additional options</li><li><strong>Swipe:</strong> Navigation or dismissal</li><li><strong>Pinch/Spread:</strong> Zoom in/out</li></ul><h2>Best Practices</h2><ol><li>Use familiar gestures that users already know</li><li>Provide visual feedback for gestures</li><li>Ensure gestures are discoverable or have visible alternatives</li><li>Consider accessibility for users who may have difficulty with certain gestures</li><li>Test gestures on various device sizes and orientations</li></ol>",
+  "thumbnail": "/images/gesture-interactions-thumb.jpg",
+  "heroImage": "/images/gesture-interactions-hero.jpg",
+  "emoji": "👆",
+  "backgroundColor": "#DDA0DD"
+}

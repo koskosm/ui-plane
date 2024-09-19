@@ -1,0 +1,13 @@
+{
+  "id": 25,
+  "title": "Data Visualization Patterns",
+  "slug": "data-visualization-patterns",
+  "excerpt": "Effective ways to present complex data visually.",
+  "category": "UI Patterns",
+  "tags": ["Data Visualization", "Information Design"],
+  "content": "<p>Data visualization patterns are crucial for presenting complex information in an easily digestible format. These patterns help users understand trends, make comparisons, and derive insights from data.</p><h2>Common Patterns</h2><ul><li><strong>Bar Charts:</strong> For comparing quantities across categories</li><li><strong>Line Graphs:</strong> For showing trends over time</li><li><strong>Pie Charts:</strong> For displaying parts of a whole</li><li><strong>Scatter Plots:</strong> For showing relationships between variables</li><li><strong>Heat Maps:</strong> For visualizing data density or frequency</li></ul><h2>Best Practices</h2><ol><li>Choose the right chart type for your data</li><li>Use color effectively to highlight important information</li><li>Provide clear labels and legends</li><li>Allow for interactivity when appropriate</li><li>Ensure accessibility for all users</li></ol>",
+  "thumbnail": "/images/data-visualization-thumb.jpg",
+  "heroImage": "/images/data-visualization-hero.jpg",
+  "emoji": "📊",
+  "backgroundColor": "#87CEEB"
+}
