@@ -1,12 +1,18 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import './PlaneAnimation.css';
 
 function PlaneAnimation({ currentPost }) {
-  // Generate random delay between -40s and 0s
-  const randomDelay = () => Math.floor(Math.random() * -40) + 's';
+  const [animationState, setAnimationState] = useState('default');
 
-  const emoji = currentPost ? currentPost.emoji : '✈️';
-  const isPostPage = !!currentPost;
+  useEffect(() => {
+    if (currentPost) {
+      setAnimationState('postEnter');
+    } else {
+      setAnimationState('default');
+    }
+  }, [currentPost]);
+
+  const randomDelay = () => Math.floor(Math.random() * -40) + 's';
 
   return (
     <div className="plane-animation-container">
@@ -23,7 +29,10 @@ function PlaneAnimation({ currentPost }) {
           </div>
         ))}
       </div>
-      <div className={`plane ${isPostPage ? 'no-rotate' : ''}`}>{emoji}</div>
+      <div className={`plane ${animationState}`}>✈️</div>
+      <div className={`post-emoji ${animationState}`}>
+        {currentPost ? currentPost.emoji : '🏷️'}
+      </div>
     </div>
   );
 }

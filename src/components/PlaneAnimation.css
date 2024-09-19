@@ -13,15 +13,34 @@
   font-size: 60px;
   z-index: 10;
   font-family: "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji", "Android Emoji", "EmojiSymbols", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  transition: transform 0.5s ease-in-out;
 }
 
+.plane.postEnter {
+  transform: translate(-200vw, -50%) rotate(225deg);
+}
+
+.post-emoji {
+  position: absolute;
+  top: 25%;
+  right: -60px;
+  transition: transform 0.5s ease-in-out;
+  z-index: 10;
+  font-size: 60px;
+}
+
+.post-emoji.postEnter {
+    transform: translate(-51vw, 0);
+}
+
+/* Existing cloud styles remain unchanged */
 .cloud {
   position: absolute;
   filter: blur(5px);
-  width: 300px;  /* Increased from 200px */
-  height: 80px;  /* Increased from 60px */
+  width: 300px;
+  height: 80px;
   background-color: transparent;
-  animation: moveCloud 40s linear infinite;  /* Increased duration for slower movement */
+  animation: moveCloud 40s linear infinite;
   opacity: 0.9;
 }
 
@@ -31,6 +50,7 @@
   background-color: rgba(255, 255, 255, 0.8);
 }
 
+/* Existing cloud positioning and styles remain unchanged */
 .cloud1 { top: 10%; }
 .cloud2 { top: 20%; }
 .cloud3 { top: 30%; }
@@ -44,7 +64,7 @@
 .cloud11 { top: 35%; }
 .cloud12 { top: 45%; }
 
-/* Cloud circle styles */
+/* Existing cloud circle styles remain unchanged */
 .cloud div:nth-child(1) { width: 80px; height: 80px; top: 0; left: 10px; }
 .cloud div:nth-child(2) { width: 90px; height: 90px; top: -30px; left: 50px; }
 .cloud div:nth-child(3) { width: 70px; height: 70px; top: 10px; left: 100px; }
@@ -59,8 +79,4 @@
 @keyframes moveCloud {
   0% { left: -300px; }
   100% { left: 100%; }
-}
-
-.plane.no-rotate {
-  transform: translate(-50%, -50%);
 }
