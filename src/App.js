@@ -33,42 +33,58 @@ function App() {
     <Router>
       <div className="App flex flex-col min-h-screen">
         <Navbar />
-        <PlaneAnimation currentPost={currentPost} />
-        <main className="container mx-auto mt-8 px-4 flex-grow pb-12">
-          <Routes>
-            <Route path="/" element={
-              <>
-                <div className="text-center mb-12">
-                  <h1 className="text-4xl md:text-5xl font-bold mb-4">Welcome to UI Plane</h1>
-                  <p className="text-xl md:text-2xl text-gray-600 mb-8">A UI flight checklist and collection of best design practices!</p>
-                  <div className="flex justify-center">
-                    <SearchBox onSearch={handleSearch} searchTerm={searchTerm} onClear={handleClearSearch} />
-                  </div>
-                </div>
-                {searchResults ? (
-                  <>
-                    <div className="flex justify-between items-center mb-4">
-                      <h2 className="text-2xl font-bold">Search Results for "{searchTerm}"</h2>
-                      <button 
-                        onClick={handleClearSearch}
-                        className="px-3 py-1 text-sm text-white bg-gray-500 rounded hover:bg-gray-600 focus:outline-none focus:ring-2 focus:ring-gray-500 focus:ring-opacity-50"
-                      >
-                        Clear Search
-                      </button>
-                    </div>
-                    <PostList posts={searchResults} />
-                  </>
-                ) : (
-                  <PostList posts={posts} />
-                )}
-              </>
-            } />
-            <Route path="/categories" element={<CategoryList posts={posts} />} />
-            <Route path="/category/:tag" element={<CategoryPage posts={posts} />} />
-            <Route path="/post/:slug" element={<PostPage posts={posts} setCurrentPost={setCurrentPost} />} />
-          </Routes>
-        </main>
-        <Footer /> {/* Add the Footer component here */}
+        <div className="flex-grow flex">
+          {/* Left navigation spacer - only visible on large screens */}
+          <div className="hidden lg:block w-64 flex-shrink-0"></div>
+          {/* Main content wrapper */}
+          <div className="flex-grow flex flex-col overflow-x-hidden">
+            {/* Plane animation container */}
+            <div className="w-full">
+              <PlaneAnimation currentPost={currentPost} />
+            </div>
+            {/* Main content */}
+            <main className="flex-grow px-4 lg:px-8 pb-12"> {/* Adjusted padding */}
+              <div className="max-w-6xl mx-auto mt-8">
+                <Routes>
+                  <Route path="/" element={
+                    <>
+                      <div className="text-center mb-12">
+                        <h1 className="text-4xl md:text-5xl font-bold mb-4">Welcome to UI Plane</h1>
+                        <p className="text-xl md:text-2xl text-gray-600 mb-8">A UI flight checklist and collection of best design practices!</p>
+                        <div className="flex justify-center">
+                          <SearchBox onSearch={handleSearch} searchTerm={searchTerm} onClear={handleClearSearch} />
+                        </div>
+                      </div>
+                      {searchResults ? (
+                        <>
+                          <div className="flex justify-between items-center mb-4">
+                            <h2 className="text-2xl font-bold">Search Results for "{searchTerm}"</h2>
+                            <button 
+                              onClick={handleClearSearch}
+                              className="px-3 py-1 text-sm text-white bg-gray-500 rounded hover:bg-gray-600 focus:outline-none focus:ring-2 focus:ring-gray-500 focus:ring-opacity-50"
+                            >
+                              Clear Search
+                            </button>
+                          </div>
+                          <PostList posts={searchResults} />
+                        </>
+                      ) : (
+                        <PostList posts={posts} />
+                      )}
+                    </>
+                  } />
+                  <Route path="/categories" element={<CategoryList posts={posts} />} />
+                  <Route path="/category/:tag" element={<CategoryPage posts={posts} />} />
+                  <Route path="/post/:slug" element={<PostPage posts={posts} setCurrentPost={setCurrentPost} />} />
+                </Routes>
+              </div>
+            </main>
+            {/* Footer container */}
+            <div className="w-full">
+              <Footer />
+            </div>
+          </div>
+        </div>
       </div>
     </Router>
   );
