@@ -1,9 +1,7 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
 
 function Navbar() {
-  const [isOpen, setIsOpen] = useState(false);
-
   return (
     <nav className="bg-white text-black p-4 sticky top-0 z-50 shadow-md">
       <div className="container mx-auto flex justify-between items-center">
@@ -12,7 +10,11 @@ function Navbar() {
           UI Plane
         </Link>
         
-        {/* Rest of the Navbar component remains unchanged */}
+        {/* Add your navigation items here */}
+        <ul className="hidden md:flex space-x-4">
+          <li><Link to="/categories" className="hover:text-gray-700">View by Category</Link></li>
+          {/* Add more navigation items as needed */}
+        </ul>
       </div>
     </nav>
   );
