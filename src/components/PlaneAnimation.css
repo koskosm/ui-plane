@@ -54,7 +54,7 @@
 }
 
 .post-emoji.postEnter {
-  transform: translate(-51vw, 0);
+  transform: translate(calc(-50vw - 30px), 0);
   opacity: 1;
 }
 
