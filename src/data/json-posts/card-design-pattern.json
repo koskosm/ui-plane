@@ -7,5 +7,7 @@
   "tags": ["Layout", "Information Display"],
   "content": "<p>Card designs have become a ubiquitous UI element in modern web and mobile applications. They offer a versatile and efficient way to display information, grouping related content and actions into easily digestible units. This pattern has gained popularity due to its ability to create clean, organized interfaces that are both visually appealing and functional.</p><p>The card design pattern originated from physical card systems used for organizing information, such as library catalog cards or business cards. In the digital realm, cards serve a similar purpose but with added interactivity and flexibility. They work particularly well in responsive designs, as they can easily reflow and reorganize based on screen size.</p><h2>Key Principles</h2><ul><li><strong>Clear visual hierarchy:</strong> Organize content within the card to guide the user's eye to the most important information first. Use typography, color, and spacing to create a clear hierarchy.</li><li><strong>Consistent spacing and alignment:</strong> Maintain uniform padding and alignment across all cards to create a cohesive, professional look.</li><li><strong>Purposeful use of imagery:</strong> When including images, ensure they add value and context to the card's content. Avoid using images merely for decoration if they don't enhance the user's understanding.</li><li><strong>Clear call-to-action:</strong> If the card is interactive, make sure the primary action is obvious and easily accessible.</li></ul>",
   "thumbnail": "/images/card-design-thumb.jpg",
-  "heroImage": "/images/card-design-hero.jpg"
+  "heroImage": "/images/card-design-hero.jpg",
+  "emoji": "🃏",
+  "backgroundColor": "#FFD700"
 }

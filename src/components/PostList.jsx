@@ -13,16 +13,16 @@ function PostList({ posts, category, excludeLatest }) {
     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
       {filteredPosts.map(post => (
         <Link to={`/post/${post.slug}`} key={post.id} className="border rounded-lg shadow overflow-hidden hover:shadow-lg transition-shadow duration-300">
-          <div className="aspect-w-16 aspect-h-9">
-            <img 
-              src={post.thumbnail} 
-              alt={post.title} 
-              className="object-cover w-full h-full"
-            />
+          <div className="relative w-full pb-[56.25%]"> {/* 16:9 aspect ratio */}
+            <div 
+              className="absolute inset-0 flex items-center justify-center"
+              style={{ backgroundColor: post.backgroundColor }}
+            >
+              <span className="text-6xl">{post.emoji}</span>
+            </div>
           </div>
           <div className="p-4">
             <h2 className="text-xl font-bold mb-2">{post.title}</h2>
-            <p className="text-gray-600 mb-2">{post.excerpt}</p>
             <p className="text-sm text-gray-500">{post.category}</p>
             <div className="mt-2">
               {post.tags.map(tag => (

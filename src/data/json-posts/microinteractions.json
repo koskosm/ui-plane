@@ -5,7 +5,9 @@
   "excerpt": "Enhancing user experience through small, engaging interactions.",
   "category": "UI Practices",
   "tags": ["Interaction Design", "Animation"],
-  "content": "<p>Microinteractions are small, subtle animations or feedback mechanisms that enhance the user experience by providing context, guiding users through a process, or simply adding delight.</p><h2>Types of Microinteractions</h2><ul><li>System status feedback</li><li>User input confirmation</li><li>Call-to-action enhancements</li><li>Data visualization animations</li></ul><h2>Best Practices</h2><ol><li>Keep animations subtle and purposeful</li><li>Ensure microinteractions are fast and smooth</li><li>Use microinteractions to provide immediate feedback</li><li>Make sure they enhance rather than distract from the main experience</li><li>Consider the frequency of interaction when designing microinteractions</li><li>Ensure accessibility by providing alternatives for users who prefer reduced motion</li></ol>",
+  "content": "...",
   "thumbnail": "/images/microinteractions-thumb.jpg",
-  "heroImage": "/images/microinteractions-hero.jpg"
+  "heroImage": "/images/microinteractions-hero.jpg",
+  "emoji": "👆",
+  "backgroundColor": "#FFD700"
 }

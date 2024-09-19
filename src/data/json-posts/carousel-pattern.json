@@ -5,7 +5,9 @@
   "excerpt": "Showcasing multiple items in a limited space.",
   "category": "UI Patterns",
   "tags": ["Layout", "Content Display"],
-  "content": "<p>The carousel pattern, also known as a slider, is a way to display multiple pieces of content in a single, compact area. It allows users to browse through a series of items, images, or cards.</p><h2>Use Cases</h2><ul><li>Showcasing featured products or content</li><li>Displaying image galleries</li><li>Presenting testimonials or reviews</li></ul><h2>Best Practices</h2><ol><li>Provide clear navigation controls</li><li>Use auto-rotation cautiously</li><li>Ensure mobile responsiveness</li><li>Optimize for performance</li><li>Make it accessible for all users</li></ol>",
+  "content": "...",
   "thumbnail": "/images/carousel-thumb.jpg",
-  "heroImage": "/images/carousel-hero.jpg"
+  "heroImage": "/images/carousel-hero.jpg",
+  "emoji": "🎠",
+  "backgroundColor": "#FF69B4"
 }

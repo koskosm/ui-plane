@@ -5,7 +5,9 @@
   "excerpt": "Designing effective loading states to improve perceived performance.",
   "category": "UI Components",
   "tags": ["User Experience", "Animation"],
-  "content": "<p>Loading indicators inform users that a process is ongoing and content is being loaded. They play a crucial role in managing user expectations and reducing perceived wait times.</p><h2>Types of Loading Indicators</h2><ul><li>Spinners</li><li>Progress bars</li><li>Skeleton screens</li><li>Animated placeholders</li></ul><h2>Best Practices</h2><ol><li>Use appropriate indicators for different loading scenarios</li><li>Provide context about what's loading</li><li>Consider using engaging animations to distract from wait times</li><li>Ensure loading indicators are accessible and don't cause visual discomfort</li><li>For longer loads, consider showing progress or estimated time</li></ol>",
+  "content": "...",
   "thumbnail": "/images/loading-indicators-thumb.jpg",
-  "heroImage": "/images/loading-indicators-hero.jpg"
+  "heroImage": "/images/loading-indicators-hero.jpg",
+  "emoji": "⏳",
+  "backgroundColor": "#00CED1"
 }

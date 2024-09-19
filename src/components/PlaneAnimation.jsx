@@ -1,9 +1,12 @@
 import React from 'react';
 import './PlaneAnimation.css';
 
-function PlaneAnimation() {
+function PlaneAnimation({ currentPost }) {
   // Generate random delay between -40s and 0s
   const randomDelay = () => Math.floor(Math.random() * -40) + 's';
+
+  const emoji = currentPost ? currentPost.emoji : '✈️';
+  const isPostPage = !!currentPost;
 
   return (
     <div className="plane-animation-container">
@@ -20,7 +23,7 @@ function PlaneAnimation() {
           </div>
         ))}
       </div>
-      <div className="plane">✈️</div>
+      <div className={`plane ${isPostPage ? 'no-rotate' : ''}`}>{emoji}</div>
     </div>
   );
 }

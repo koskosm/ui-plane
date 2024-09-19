@@ -5,7 +5,9 @@
   "excerpt": "Organizing content into easily accessible sections.",
   "category": "UI Patterns",
   "tags": ["Navigation", "Content Organization"],
-  "content": "<p>The tabs pattern is a common UI element used to divide content into separate views which can be accessed without leaving the page. It mimics the tabbed dividers in a file cabinet, allowing users to quickly switch between different sections of content.</p><h2>Key Features</h2><ul><li>Organizes related content into distinct sections</li><li>Allows quick switching between different views</li><li>Saves screen space by showing only one section at a time</li></ul><h2>Implementation Guidelines</h2><ol><li>Use clear and concise labels for each tab</li><li>Highlight the active tab</li><li>Ensure keyboard navigation</li><li>Consider responsive design for smaller screens</li></ol>",
+  "content": "...",
   "thumbnail": "/images/tabs-thumb.jpg",
-  "heroImage": "/images/tabs-hero.jpg"
+  "heroImage": "/images/tabs-hero.jpg",
+  "emoji": "📑",
+  "backgroundColor": "#20B2AA"
 }

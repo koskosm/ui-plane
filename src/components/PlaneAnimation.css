@@ -60,3 +60,7 @@
   0% { left: -300px; }
   100% { left: 100%; }
 }
+
+.plane.no-rotate {
+  transform: translate(-50%, -50%);
+}

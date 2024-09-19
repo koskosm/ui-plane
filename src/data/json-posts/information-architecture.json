@@ -5,7 +5,9 @@
   "excerpt": "Organizing and structuring content for optimal user experience.",
   "category": "UI Practices",
   "tags": ["Information Design", "User Experience"],
-  "content": "<p>Information Architecture (IA) is the practice of organizing, structuring, and labeling content in an effective and sustainable way. It forms the backbone of good user experience by helping users find information and complete tasks efficiently.</p><h2>Key Components</h2><ul><li>Organization schemes and structures</li><li>Labeling systems</li><li>Navigation systems</li><li>Search systems</li></ul><h2>Best Practices</h2><ol><li>Understand your users and their needs</li><li>Create clear and logical hierarchies</li><li>Use familiar and consistent labeling</li><li>Provide multiple ways to access information</li><li>Consider the relationships between different pieces of content</li><li>Test your IA with real users and iterate based on feedback</li></ol>",
+  "content": "...",
   "thumbnail": "/images/information-architecture-thumb.jpg",
-  "heroImage": "/images/information-architecture-hero.jpg"
+  "heroImage": "/images/information-architecture-hero.jpg",
+  "emoji": "🗂️",
+  "backgroundColor": "#E6E6FA"
 }

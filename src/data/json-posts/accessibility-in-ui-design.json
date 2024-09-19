@@ -5,7 +5,9 @@
   "excerpt": "Designing interfaces that are usable by people with diverse abilities.",
   "category": "UI Practices",
   "tags": ["Accessibility", "Inclusive Design"],
-  "content": "<p>Accessibility in UI design ensures that interfaces can be used by people with a wide range of abilities, including those with visual, auditory, motor, or cognitive disabilities.</p><h2>Key Principles</h2><ul><li>Perceivable: Information must be presentable to users in ways they can perceive</li><li>Operable: Interface components must be operable by all users</li><li>Understandable: Information and operation must be understandable</li><li>Robust: Content must be robust enough to be interpreted by a wide variety of user agents</li></ul><h2>Best Practices</h2><ol><li>Use sufficient color contrast for text and important elements</li><li>Provide text alternatives for non-text content</li><li>Ensure keyboard navigation for all functionality</li><li>Use semantic HTML to structure your content</li><li>Design focus indicators for interactive elements</li><li>Provide captions and transcripts for multimedia content</li></ol>",
+  "content": "...",
   "thumbnail": "/images/accessibility-thumb.jpg",
-  "heroImage": "/images/accessibility-hero.jpg"
+  "heroImage": "/images/accessibility-hero.jpg",
+  "emoji": "♿",
+  "backgroundColor": "#00FA9A"
 }

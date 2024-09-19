@@ -5,7 +5,9 @@
   "excerpt": "Enhancing user engagement through continuous content loading.",
   "category": "UI Patterns",
   "tags": ["Navigation", "Content Loading"],
-  "content": "<p>Infinite scroll is a web design technique that loads content continuously as the user scrolls down the page, eliminating the need for pagination. This pattern has gained popularity in recent years, especially on social media platforms and content-heavy websites.</p><h2>How It Works</h2><p>As the user approaches the bottom of the page, new content is automatically loaded and appended to the existing content. This creates a seamless browsing experience, allowing users to consume large amounts of content without interruption.</p><h2>Benefits</h2><ul><li><strong>Increased user engagement:</strong> Users tend to spend more time on sites with infinite scroll, as it reduces the friction of clicking to the next page.</li><li><strong>Smooth browsing experience:</strong> The continuous flow of content creates a more immersive and fluid interaction.</li><li><strong>Reduced interaction cost:</strong> Users don't need to make decisions about navigating to the next page, which can lead to increased content consumption.</li><li><strong>Mobile-friendly:</strong> Infinite scroll works well on mobile devices, where scrolling is a natural and easy gesture.</li></ul>",
+  "content": "...",
   "thumbnail": "/images/infinite-scroll-thumb.jpg",
-  "heroImage": "/images/infinite-scroll-hero.jpg"
+  "heroImage": "/images/infinite-scroll-hero.jpg",
+  "emoji": "♾️",
+  "backgroundColor": "#87CEFA"
 }

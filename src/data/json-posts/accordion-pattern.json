@@ -5,7 +5,9 @@
   "excerpt": "Organizing and presenting content in collapsible sections.",
   "category": "UI Patterns",
   "tags": ["Layout", "Information Architecture"],
-  "content": "<p>The accordion pattern is a vertical stacking of headers that can be clicked to reveal or hide associated content. It's an effective way to present large amounts of information in a compact, organized manner.</p><h2>Key Benefits</h2><ul><li>Saves vertical space by hiding content until needed</li><li>Allows users to focus on specific content sections</li><li>Provides a clear structure for complex information</li></ul><h2>Implementation Tips</h2><ol><li>Use clear indicators to show which sections are expandable</li><li>Implement smooth transitions when expanding or collapsing sections</li><li>Ensure keyboard accessibility</li><li>Consider default states based on user needs</li></ol>",
+  "content": "...",
   "thumbnail": "/images/accordion-thumb.jpg",
-  "heroImage": "/images/accordion-hero.jpg"
+  "heroImage": "/images/accordion-hero.jpg",
+  "emoji": "🪗",
+  "backgroundColor": "#FFB6C1"
 }

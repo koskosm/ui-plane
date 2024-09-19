@@ -12,6 +12,7 @@ import Footer from './components/Footer'; // Add this import
 function App() {
   const [searchResults, setSearchResults] = useState(null);
   const [searchTerm, setSearchTerm] = useState('');
+  const [currentPost, setCurrentPost] = useState(null);
 
   const handleSearch = (term) => {
     setSearchTerm(term);
@@ -32,7 +33,7 @@ function App() {
     <Router>
       <div className="App flex flex-col min-h-screen">
         <Navbar />
-        <PlaneAnimation />
+        <PlaneAnimation currentPost={currentPost} />
         <main className="container mx-auto mt-8 px-4 flex-grow pb-12">
           <Routes>
             <Route path="/" element={
@@ -64,7 +65,7 @@ function App() {
             } />
             <Route path="/categories" element={<CategoryList posts={posts} />} />
             <Route path="/category/:tag" element={<CategoryPage posts={posts} />} />
-            <Route path="/post/:slug" element={<PostPage posts={posts} />} />
+            <Route path="/post/:slug" element={<PostPage posts={posts} setCurrentPost={setCurrentPost} />} />
           </Routes>
         </main>
         <Footer /> {/* Add the Footer component here */}
@@ -73,7 +74,7 @@ function App() {
   );
 }
 
-function PostPage({ posts }) {
+function PostPage({ posts, setCurrentPost }) {
   const { slug } = useParams();
   const post = posts.find(p => p.slug === slug);
   const location = useLocation();
@@ -81,6 +82,13 @@ function PostPage({ posts }) {
   useEffect(() => {
     window.scrollTo(0, 0);
   }, [location]);
+
+  useEffect(() => {
+    if (post) {
+      setCurrentPost(post);
+    }
+    return () => setCurrentPost(null);
+  }, [post, setCurrentPost]);
 
   if (!post) {
     return <div>Post not found</div>;
