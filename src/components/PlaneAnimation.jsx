@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useMemo } from 'react';
 import './PlaneAnimation.css';
 
 function PlaneAnimation({ currentPost }) {
@@ -15,16 +15,24 @@ function PlaneAnimation({ currentPost }) {
     }
   }, [currentPost]);
 
-  const randomDelay = () => Math.floor(Math.random() * -40) + 's';
+  const cloudAnimations = useMemo(() => {
+    return Array(12).fill().map(() => ({
+      delay: `${Math.floor(Math.random() * -40)}s`,
+      duration: `${30 + Math.floor(Math.random() * 20)}s`
+    }));
+  }, []);
 
   return (
     <div className="plane-animation-container">
       <div className="clouds">
-        {[...Array(12)].map((_, index) => (
+        {cloudAnimations.map((animation, index) => (
           <div 
             key={index} 
             className={`cloud cloud${index + 1}`}
-            style={{ animationDelay: randomDelay() }}
+            style={{ 
+              animationDelay: animation.delay,
+              animationDuration: animation.duration
+            }}
           >
             {[...Array(10)].map((_, i) => (
               <div key={i}></div>

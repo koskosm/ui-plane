@@ -5,6 +5,14 @@
   background: linear-gradient(to bottom, #87CEEB, #E0F6FF);
 }
 
+.clouds {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
 .plane {
   position: absolute;
   top: 50%;
@@ -13,7 +21,7 @@
   font-size: 60px;
   z-index: 10;
   font-family: "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji", "Android Emoji", "EmojiSymbols", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-  transition: transform 1.2s cubic-bezier(0.87, 0, 0.13, 1);;
+  transition: transform 1.2s cubic-bezier(0.87, 0, 0.13, 1);
 }
 
 .plane.postEnter {
@@ -51,20 +59,18 @@
 }
 
 .post-emoji.homeReturn {
-  /*transform: translate(200vw, 0);*/
   opacity: 0;
   transition: transform 1s ease-in-out, opacity 0.05s ease-in-out;
 }
 
-/* Existing cloud styles remain unchanged */
 .cloud {
   position: absolute;
   filter: blur(5px);
   width: 300px;
   height: 80px;
   background-color: transparent;
-  animation: moveCloud 40s linear infinite;
   opacity: 0.9;
+  animation: moveCloud linear infinite;
 }
 
 .cloud div {
@@ -73,7 +79,7 @@
   background-color: rgba(255, 255, 255, 0.8);
 }
 
-/* Existing cloud positioning and styles remain unchanged */
+/* Cloud positioning remains unchanged */
 .cloud1 { top: 10%; }
 .cloud2 { top: 20%; }
 .cloud3 { top: 30%; }
@@ -87,7 +93,7 @@
 .cloud11 { top: 35%; }
 .cloud12 { top: 45%; }
 
-/* Existing cloud circle styles remain unchanged */
+/* Cloud circle styles remain unchanged */
 .cloud div:nth-child(1) { width: 80px; height: 80px; top: 0; left: 10px; }
 .cloud div:nth-child(2) { width: 90px; height: 90px; top: -30px; left: 50px; }
 .cloud div:nth-child(3) { width: 70px; height: 70px; top: 10px; left: 100px; }
@@ -100,6 +106,6 @@
 .cloud div:nth-child(10) { width: 40px; height: 40px; top: 30px; left: 260px; }
 
 @keyframes moveCloud {
-  0% { left: -300px; }
-  100% { left: 100%; }
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(100vw); }
 }
