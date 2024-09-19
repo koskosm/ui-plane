@@ -13,7 +13,7 @@
   font-size: 60px;
   z-index: 10;
   font-family: "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji", "Android Emoji", "EmojiSymbols", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-  transition: transform 1.2s ease-in-out;
+  transition: transform 1.2s cubic-bezier(0.87, 0, 0.13, 1);;
 }
 
 .plane.postEnter {
@@ -23,7 +23,7 @@
 .plane.homeReturn {
   transform: translate(200vw, -50%) rotate(225deg);
   transition: none;
-  animation: flyFromRight 1.2s ease-in-out forwards;
+  animation: flyFromRight 1.2s cubic-bezier(0.87, 0, 0.13, 1) forwards;
 }
 
 @keyframes flyFromRight {
