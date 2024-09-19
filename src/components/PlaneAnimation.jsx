@@ -8,7 +8,10 @@ function PlaneAnimation({ currentPost }) {
     if (currentPost) {
       setAnimationState('postEnter');
     } else {
-      setAnimationState('default');
+      setAnimationState('homeReturn');
+      // Reset to default state after animation completes
+      const timer = setTimeout(() => setAnimationState('default'), 1200);
+      return () => clearTimeout(timer);
     }
   }, [currentPost]);
 
