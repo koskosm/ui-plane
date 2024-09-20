@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import * as d3 from 'd3';
+import TabsDemo from './TabsDemo'; // Add this import
 
 function AccordionItem({ header, content }) {
   const [isOpen, setIsOpen] = useState(false);
@@ -577,6 +578,14 @@ function PostContent({ post }) {
           <h2 className="text-2xl font-bold mt-8 mb-4">Live Demo</h2>
           <p className="mb-4">Here's a simple pagination demo with 3 pages:</p>
           <PaginationDemo pages={demoContent} />
+        </>
+      );
+    } else if (post.slug === 'tabs-pattern') {
+      return (
+        <>
+          <h2 className="text-2xl font-bold mt-8 mb-4">Live Demo</h2>
+          <p className="mb-4">Here's a simple tabs demo with 3 tabs:</p>
+          <TabsDemo />
         </>
       );
     }
