@@ -405,6 +405,8 @@ function LoadingIndicatorDemo({ indicators }) {
 }
 
 function PostContent({ post }) {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
   const createMarkup = (html) => ({ __html: html });
 
   const renderDemo = () => {
@@ -497,6 +499,43 @@ function PostContent({ post }) {
           <p className="mb-4">Here's a live demo of various loading indicators:</p>
           <LoadingIndicatorDemo indicators={demoContent} />
         </>
+      );
+    } else if (post.slug === 'modal-dialog-pattern') {
+      return (
+        <div className="mt-6">
+          <h2 className="text-2xl font-bold mb-4">Demo</h2>
+          <button
+            onClick={() => setIsModalOpen(true)}
+            className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+          >
+            {demoContent.buttonText}
+          </button>
+          {isModalOpen && (
+            <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center">
+              <div className="bg-white p-6 rounded-lg max-w-md">
+                <h3 className="text-xl font-bold mb-4">{demoContent.modalTitle}</h3>
+                <p className="mb-4">{demoContent.modalContent}</p>
+                <div className="flex justify-end space-x-2">
+                  <button
+                    onClick={() => setIsModalOpen(false)}
+                    className="bg-gray-300 hover:bg-gray-400 text-black font-bold py-2 px-4 rounded"
+                  >
+                    Cancel
+                  </button>
+                  <button
+                    onClick={() => {
+                      alert('OK clicked!');
+                      setIsModalOpen(false);
+                    }}
+                    className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+                  >
+                    OK
+                  </button>
+                </div>
+              </div>
+            </div>
+          )}
+        </div>
       );
     }
     

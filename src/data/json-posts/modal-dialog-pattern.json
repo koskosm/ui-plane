@@ -9,5 +9,10 @@
   "thumbnail": "/images/modal-dialog-thumb.jpg",
   "heroImage": "/images/modal-dialog-hero.jpg",
   "emoji": "💬",
-  "backgroundColor": "#E6E6FA"
+  "backgroundColor": "#E6E6FA",
+  "demo": {
+    "buttonText": "Open Modal",
+    "modalTitle": "Example Modal",
+    "modalContent": "This is an example of a modal dialog. It can contain important information or actions for the user."
+  }
 }
