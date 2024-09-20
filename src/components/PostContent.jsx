@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import * as d3 from 'd3';
-import TabsDemo from './TabsDemo'; // Add this import
+import TabsDemo from './TabsDemo';
+import TooltipDemo from './TooltipDemo';
 
 function AccordionItem({ header, content }) {
   const [isOpen, setIsOpen] = useState(false);
@@ -441,6 +442,7 @@ function PaginationDemo({ pages }) {
 
 function PostContent({ post }) {
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [isTooltipVisible, setIsTooltipVisible] = useState(false);
 
   const createMarkup = (html) => ({ __html: html });
 
@@ -586,6 +588,22 @@ function PostContent({ post }) {
           <h2 className="text-2xl font-bold mt-8 mb-4">Live Demo</h2>
           <p className="mb-4">Here's a simple tabs demo with 3 tabs:</p>
           <TabsDemo />
+        </>
+      );
+    } else if (post.slug === 'tooltip-pattern') {
+      return (
+        <>
+          <h2 className="text-2xl font-bold mt-8 mb-4">Live Demo</h2>
+          <p className="mb-4">Hover over the information icon to see the tooltip:</p>
+          <div 
+            onMouseEnter={() => setIsTooltipVisible(true)}
+            onMouseLeave={() => setIsTooltipVisible(false)}
+          >
+            <TooltipDemo 
+              isTooltipVisible={isTooltipVisible}
+              tooltipContent={demoContent.tooltipContent}
+            />
+          </div>
         </>
       );
     }
