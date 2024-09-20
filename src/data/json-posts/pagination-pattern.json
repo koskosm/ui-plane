@@ -9,5 +9,19 @@
   "thumbnail": "/images/pagination-thumb.jpg",
   "heroImage": "/images/pagination-hero.jpg",
   "emoji": "📄",
-  "backgroundColor": "#4682B4"
+  "backgroundColor": "#4682B4",
+  "demo": [
+    {
+      "title": "Page 1",
+      "content": "This is the content of page 1. It demonstrates how pagination can be used to break up long content into manageable chunks."
+    },
+    {
+      "title": "Page 2",
+      "content": "Welcome to page 2! This page shows how users can navigate through paginated content using 'Previous' and 'Next' buttons."
+    },
+    {
+      "title": "Page 3",
+      "content": "You've reached the final page of our pagination demo. In a real-world scenario, there could be many more pages, but this simple example illustrates the core concept."
+    }
+  ]
 }

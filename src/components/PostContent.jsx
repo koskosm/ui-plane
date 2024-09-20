@@ -404,6 +404,40 @@ function LoadingIndicatorDemo({ indicators }) {
   );
 }
 
+function PaginationDemo({ pages }) {
+  const [currentPage, setCurrentPage] = useState(0);
+
+  const handlePageChange = (newPage) => {
+    if (newPage >= 0 && newPage < pages.length) {
+      setCurrentPage(newPage);
+    }
+  };
+
+  return (
+    <div className="pagination-demo">
+      <div className="pagination-content">
+        <h3>{pages[currentPage].title}</h3>
+        <p>{pages[currentPage].content}</p>
+      </div>
+      <div className="pagination-controls">
+        <button 
+          onClick={() => handlePageChange(currentPage - 1)} 
+          disabled={currentPage === 0}
+        >
+          Previous
+        </button>
+        <span>{currentPage + 1} / {pages.length}</span>
+        <button 
+          onClick={() => handlePageChange(currentPage + 1)} 
+          disabled={currentPage === pages.length - 1}
+        >
+          Next
+        </button>
+      </div>
+    </div>
+  );
+}
+
 function PostContent({ post }) {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
@@ -536,6 +570,14 @@ function PostContent({ post }) {
             </div>
           )}
         </div>
+      );
+    } else if (post.slug === 'pagination-pattern') {
+      return (
+        <>
+          <h2 className="text-2xl font-bold mt-8 mb-4">Live Demo</h2>
+          <p className="mb-4">Here's a simple pagination demo with 3 pages:</p>
+          <PaginationDemo pages={demoContent} />
+        </>
       );
     }
     
@@ -871,6 +913,43 @@ function PostContent({ post }) {
         @keyframes bounce {
           0%, 80%, 100% { transform: scale(0); }
           40% { transform: scale(1); }
+        }
+
+        .pagination-demo {
+          border: 1px solid #ddd;
+          border-radius: 4px;
+          padding: 20px;
+          max-width: 600px;
+          margin: 0 auto;
+        }
+
+        .pagination-content {
+          min-height: 150px;
+          margin-bottom: 20px;
+        }
+
+        .pagination-controls {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+        }
+
+        .pagination-controls button {
+          background-color: #007bff;
+          color: white;
+          border: none;
+          padding: 10px 15px;
+          border-radius: 4px;
+          cursor: pointer;
+        }
+
+        .pagination-controls button:disabled {
+          background-color: #cccccc;
+          cursor: not-allowed;
+        }
+
+        .pagination-controls span {
+          font-weight: bold;
         }
       `}</style>
     </div>
