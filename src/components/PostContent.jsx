@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 
 function AccordionItem({ header, content }) {
   const [isOpen, setIsOpen] = useState(false);
@@ -55,6 +55,53 @@ function ButtonDemo({ items }) {
   );
 }
 
+function CardDemo({ items }) {
+  return (
+    <div className="card-demo">
+      {items.map((item, index) => (
+        <div key={index} className="card" style={{ backgroundColor: item.color }}>
+          <div className="card-content">
+            <h2 className="card-title">{item.title}</h2>
+            <p className="card-text">{item.text}</p>
+            <a href="#" className="card-button">{item.buttonText}</a>
+          </div>
+        </div>
+      ))}
+    </div>
+  );
+}
+
+function CarouselDemo({ items }) {
+  const [currentIndex, setCurrentIndex] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentIndex((prevIndex) => (prevIndex + 1) % items.length);
+    }, 3000);
+    return () => clearInterval(interval);
+  }, [items.length]);
+
+  const showSlide = (index) => {
+    if (index < 0) index = items.length - 1;
+    if (index >= items.length) index = 0;
+    setCurrentIndex(index);
+  };
+
+  return (
+    <div className="carousel">
+      <div className="carousel-inner" style={{ transform: `translateX(-${currentIndex * 100}%)` }}>
+        {items.map((item, index) => (
+          <div key={index} className="carousel-item" style={{ backgroundColor: item.color }}>
+            {item.content}
+          </div>
+        ))}
+      </div>
+      <button className="carousel-control prev" onClick={() => showSlide(currentIndex - 1)}>&lt;</button>
+      <button className="carousel-control next" onClick={() => showSlide(currentIndex + 1)}>&gt;</button>
+    </div>
+  );
+}
+
 function PostContent({ post }) {
   const createMarkup = (html) => ({ __html: html });
 
@@ -91,6 +138,22 @@ function PostContent({ post }) {
           <h2 className="text-2xl font-bold mt-8 mb-4">Live Demo</h2>
           <p className="mb-4">Here's a live demo of various button styles:</p>
           <ButtonDemo items={demoContent} />
+        </>
+      );
+    } else if (post.slug === 'card-design-pattern') {
+      return (
+        <>
+          <h2 className="text-2xl font-bold mt-8 mb-4">Live Demo</h2>
+          <p className="mb-4">Here's a live demo of the card design pattern:</p>
+          <CardDemo items={demoContent} />
+        </>
+      );
+    } else if (post.slug === 'carousel-pattern') {
+      return (
+        <>
+          <h2 className="text-2xl font-bold mt-8 mb-4">Live Demo</h2>
+          <p className="mb-4">Here's a live demo of the carousel pattern:</p>
+          <CarouselDemo items={demoContent} />
         </>
       );
     }
@@ -205,6 +268,75 @@ function PostContent({ post }) {
           opacity: 0.5;
           cursor: not-allowed;
         }
+        .card-demo {
+          display: flex;
+          flex-wrap: wrap;
+          gap: 20px;
+          justify-content: center;
+        }
+        .card {
+          width: 300px;
+          border-radius: 8px;
+          overflow: hidden;
+          box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+          transition: transform 0.3s ease;
+        }
+        .card:hover {
+          transform: translateY(-5px);
+        }
+        .card-content {
+          padding: 16px;
+          color: white;
+        }
+        .card-title {
+          margin: 0 0 8px 0;
+          font-size: 1.25rem;
+        }
+        .card-text {
+          margin: 0 0 16px 0;
+        }
+        .card-button {
+          display: inline-block;
+          padding: 8px 16px;
+          background-color: white;
+          color: #333;
+          text-decoration: none;
+          border-radius: 4px;
+          transition: background-color 0.3s ease;
+        }
+        .card-button:hover {
+          background-color: #f0f0f0;
+        }
+        .carousel {
+          position: relative;
+          width: 100%;
+          overflow: hidden;
+        }
+        .carousel-inner {
+          display: flex;
+          transition: transform 0.3s ease-in-out;
+        }
+        .carousel-item {
+          flex: 0 0 100%;
+          height: 300px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          font-size: 24px;
+          color: white;
+        }
+        .carousel-control {
+          position: absolute;
+          top: 50%;
+          transform: translateY(-50%);
+          background: rgba(0, 0, 0, 0.5);
+          color: white;
+          border: none;
+          padding: 10px;
+          cursor: pointer;
+        }
+        .carousel-control.prev { left: 10px; }
+        .carousel-control.next { right: 10px; }
       `}</style>
     </div>
   );
