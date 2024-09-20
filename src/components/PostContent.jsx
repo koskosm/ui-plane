@@ -1,4 +1,5 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
+import * as d3 from 'd3';
 
 function AccordionItem({ header, content }) {
   const [isOpen, setIsOpen] = useState(false);
@@ -28,7 +29,9 @@ function BreadcrumbDemo({ items }) {
         {items.map((item, index) => (
           <li key={index} className="breadcrumb-item">
             {index < items.length - 1 ? (
-              <a href={item.url}>{item.path}</a>
+              <button onClick={() => console.log(`Navigating to ${item.path}`)} className="breadcrumb-link">
+                {item.path}
+              </button>
             ) : (
               <span aria-current="page">{item.path}</span>
             )}
@@ -63,7 +66,7 @@ function CardDemo({ items }) {
           <div className="card-content">
             <h2 className="card-title">{item.title}</h2>
             <p className="card-text">{item.text}</p>
-            <a href="#" className="card-button">{item.buttonText}</a>
+            <button className="card-button">{item.buttonText}</button>
           </div>
         </div>
       ))}
@@ -99,6 +102,179 @@ function CarouselDemo({ items }) {
       <button className="carousel-control prev" onClick={() => showSlide(currentIndex - 1)}>&lt;</button>
       <button className="carousel-control next" onClick={() => showSlide(currentIndex + 1)}>&gt;</button>
     </div>
+  );
+}
+
+function BarChartDemo({ data }) {
+  const chartRef = useRef(null);
+
+  useEffect(() => {
+    if (data && chartRef.current) {
+      const margin = { top: 20, right: 20, bottom: 30, left: 40 };
+      const width = 400 - margin.left - margin.right;
+      const height = 300 - margin.top - margin.bottom;
+
+      const svg = d3.select(chartRef.current)
+        .append('svg')
+          .attr('width', width + margin.left + margin.right)
+          .attr('height', height + margin.top + margin.bottom)
+        .append('g')
+          .attr('transform', `translate(${margin.left},${margin.top})`);
+
+      const x = d3.scaleBand()
+        .range([0, width])
+        .padding(0.1);
+
+      const y = d3.scaleLinear()
+        .range([height, 0]);
+
+      x.domain(data.map(d => d.category));
+      y.domain([0, d3.max(data, d => d.value)]);
+
+      svg.selectAll('.bar')
+        .data(data)
+        .enter().append('rect')
+          .attr('class', 'bar')
+          .attr('x', d => x(d.category))
+          .attr('width', x.bandwidth())
+          .attr('y', d => y(d.value))
+          .attr('height', d => height - y(d.value))
+          .attr('fill', '#4CAF50');
+
+      svg.append('g')
+        .attr('transform', `translate(0,${height})`)
+        .call(d3.axisBottom(x));
+
+      svg.append('g')
+        .call(d3.axisLeft(y));
+    }
+  }, [data]);
+
+  return <div ref={chartRef}></div>;
+}
+
+function DropdownDemo({ items }) {
+  const [isOpen, setIsOpen] = useState(false);
+  const [selectedItem, setSelectedItem] = useState('Select an option');
+  const dropdownRef = useRef(null);
+
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
+        setIsOpen(false);
+      }
+    };
+
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, []);
+
+  const handleToggle = () => {
+    setIsOpen(!isOpen);
+  };
+
+  const handleSelect = (item) => {
+    setSelectedItem(item);
+    setIsOpen(false);
+  };
+
+  return (
+    <div className="custom-dropdown" ref={dropdownRef}>
+      <button className="dropdown-toggle" onClick={handleToggle}>
+        {selectedItem}
+      </button>
+      {isOpen && (
+        <ul className="dropdown-menu">
+          {items.map((item, index) => (
+            <li key={index} onClick={() => handleSelect(item)}>
+              {item}
+            </li>
+          ))}
+        </ul>
+      )}
+    </div>
+  );
+}
+
+function FormValidationDemo({ fields }) {
+  const [formData, setFormData] = useState({});
+  const [errors, setErrors] = useState({});
+  const [touched, setTouched] = useState({});
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData({ ...formData, [name]: value });
+    validateField(name, value);
+  };
+
+  const handleBlur = (e) => {
+    const { name } = e.target;
+    setTouched({ ...touched, [name]: true });
+    validateField(name, formData[name]);
+  };
+
+  const validateField = (fieldName, value) => {
+    let error = '';
+    const field = fields.find(f => f.type === fieldName);
+
+    if (field.required && !value) {
+      error = `${field.label} is required`;
+    } else if (fieldName === 'email' && value && !isValidEmail(value)) {
+      error = 'Please enter a valid email address';
+    } else if (fieldName === 'password' && value && value.length < field.minLength) {
+      error = `Password must be at least ${field.minLength} characters long`;
+    }
+
+    setErrors(prevErrors => ({ ...prevErrors, [fieldName]: error }));
+  };
+
+  const validateForm = () => {
+    let formIsValid = true;
+    fields.forEach(field => {
+      const value = formData[field.type] || '';
+      validateField(field.type, value);
+      if (errors[field.type]) formIsValid = false;
+    });
+    return formIsValid;
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    const allTouched = fields.reduce((acc, field) => ({ ...acc, [field.type]: true }), {});
+    setTouched(allTouched);
+    if (validateForm()) {
+      alert('Form submitted successfully!');
+    }
+  };
+
+  const isValidEmail = (email) => {
+    const re = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    return re.test(String(email).toLowerCase());
+  };
+
+  return (
+    <form onSubmit={handleSubmit} className="form-validation-demo">
+      {fields.map((field, index) => (
+        <div key={index} className="form-group">
+          <label htmlFor={field.type}>{field.label}:</label>
+          <input
+            type={field.type}
+            id={field.type}
+            name={field.type}
+            required={field.required}
+            minLength={field.minLength}
+            onChange={handleChange}
+            onBlur={handleBlur}
+          />
+          {touched[field.type] && errors[field.type] && (
+            <span className="error-message">{errors[field.type]}</span>
+          )}
+        </div>
+      ))}
+      <button type="submit">Submit</button>
+    </form>
   );
 }
 
@@ -154,6 +330,30 @@ function PostContent({ post }) {
           <h2 className="text-2xl font-bold mt-8 mb-4">Live Demo</h2>
           <p className="mb-4">Here's a live demo of the carousel pattern:</p>
           <CarouselDemo items={demoContent} />
+        </>
+      );
+    } else if (post.slug === 'data-visualization-patterns') {
+      return (
+        <>
+          <h2 className="text-2xl font-bold mt-8 mb-4">Live Demo</h2>
+          <p className="mb-4">Here's a live demo of a simple bar chart:</p>
+          <BarChartDemo data={demoContent} />
+        </>
+      );
+    } else if (post.slug === 'dropdown-pattern') {
+      return (
+        <>
+          <h2 className="text-2xl font-bold mt-8 mb-4">Live Demo</h2>
+          <p className="mb-4">Here's a live demo of the dropdown pattern:</p>
+          <DropdownDemo items={demoContent} />
+        </>
+      );
+    } else if (post.slug === 'form-validation-pattern') {
+      return (
+        <>
+          <h2 className="text-2xl font-bold mt-8 mb-4">Live Demo</h2>
+          <p className="mb-4">Here's a live demo of form validation:</p>
+          <FormValidationDemo fields={demoContent.fields} />
         </>
       );
     }
@@ -300,9 +500,11 @@ function PostContent({ post }) {
           padding: 8px 16px;
           background-color: white;
           color: #333;
+          border: none;
           text-decoration: none;
           border-radius: 4px;
           transition: background-color 0.3s ease;
+          cursor: pointer;
         }
         .card-button:hover {
           background-color: #f0f0f0;
@@ -337,6 +539,86 @@ function PostContent({ post }) {
         }
         .carousel-control.prev { left: 10px; }
         .carousel-control.next { right: 10px; }
+        .bar:hover {
+          fill: #45a049;
+        }
+        .breadcrumb-link {
+          color: #007bff;
+          background: none;
+          border: none;
+          padding: 0;
+          font: inherit;
+          cursor: pointer;
+          text-decoration: underline;
+        }
+        .breadcrumb-link:hover {
+          color: #0056b3;
+        }
+        .custom-dropdown {
+          position: relative;
+          display: inline-block;
+        }
+        .dropdown-toggle {
+          padding: 10px 15px;
+          background-color: #f8f9fa;
+          border: 1px solid #ced4da;
+          border-radius: 4px;
+          cursor: pointer;
+        }
+        .dropdown-menu {
+          position: absolute;
+          top: 100%;
+          left: 0;
+          z-index: 1000;
+          display: block;
+          min-width: 160px;
+          padding: 5px 0;
+          margin: 2px 0 0;
+          background-color: #fff;
+          border: 1px solid rgba(0,0,0,.15);
+          border-radius: 4px;
+          box-shadow: 0 6px 12px rgba(0,0,0,.175);
+        }
+        .dropdown-menu li {
+          padding: 3px 20px;
+          cursor: pointer;
+        }
+        .dropdown-menu li:hover {
+          background-color: #f8f9fa;
+        }
+        .form-validation-demo .form-group {
+          margin-bottom: 15px;
+        }
+        .form-validation-demo label {
+          display: block;
+          margin-bottom: 5px;
+        }
+        .form-validation-demo input {
+          width: 100%;
+          padding: 8px;
+          border: 1px solid #ddd;
+          border-radius: 4px;
+        }
+        .form-validation-demo input:invalid {
+          border-color: #ff4136;
+        }
+        .form-validation-demo .error-message {
+          color: #ff4136;
+          font-size: 0.8em;
+          margin-top: 5px;
+          display: block;
+        }
+        .form-validation-demo button {
+          background-color: #0056b3;
+          color: white;
+          padding: 10px 15px;
+          border: none;
+          border-radius: 4px;
+          cursor: pointer;
+        }
+        .form-validation-demo button:hover {
+          background-color: #003d82;
+        }
       `}</style>
     </div>
   );
