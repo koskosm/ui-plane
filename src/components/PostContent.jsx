@@ -278,13 +278,139 @@ function FormValidationDemo({ fields }) {
   );
 }
 
+function HamburgerMenuDemo({ menuItems }) {
+  const [isOpen, setIsOpen] = useState(false);
+
+  const toggleMenu = () => {
+    setIsOpen(!isOpen);
+  };
+
+  return (
+    <div className="hamburger-menu-demo">
+      <button className={`hamburger-button ${isOpen ? 'open' : ''}`} onClick={toggleMenu}>
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <nav className={`menu ${isOpen ? 'open' : ''}`}>
+        <ul>
+          {menuItems.map((item, index) => (
+            <li key={index}><a href={item.url}>{item.label}</a></li>
+          ))}
+        </ul>
+      </nav>
+      <style jsx>{`
+        .hamburger-menu-demo {
+          position: relative;
+          height: 300px;
+          border: 1px solid #ddd;
+          overflow: hidden;
+        }
+        .hamburger-button {
+          position: absolute;
+          top: 10px;
+          left: 10px;
+          display: flex;
+          flex-direction: column;
+          justify-content: space-around;
+          width: 2rem;
+          height: 2rem;
+          background: transparent;
+          border: none;
+          cursor: pointer;
+          padding: 0;
+          z-index: 10;
+        }
+        .hamburger-button span {
+          width: 2rem;
+          height: 0.25rem;
+          background: #333;
+          border-radius: 10px;
+          transition: all 0.3s linear;
+          position: relative;
+          transform-origin: 1px;
+        }
+        .hamburger-button.open span:first-child {
+          transform: rotate(45deg);
+        }
+        .hamburger-button.open span:nth-child(2) {
+          opacity: 0;
+        }
+        .hamburger-button.open span:nth-child(3) {
+          transform: rotate(-45deg);
+        }
+        .menu {
+          position: absolute;
+          top: 0;
+          left: 0;
+          height: 100%;
+          width: 70%;
+          max-width: 300px;
+          background: #f8f8f8;
+          transform: translateX(-100%);
+          transition: transform 0.3s ease-in-out;
+        }
+        .menu.open {
+          transform: translateX(0);
+        }
+        .menu ul {
+          list-style: none;
+          padding: 0;
+          margin: 50px 0 0 0;
+        }
+        .menu li {
+          padding: 1rem;
+        }
+        .menu a {
+          text-decoration: none;
+          color: #333;
+          font-size: 1.2rem;
+        }
+      `}</style>
+    </div>
+  );
+}
+
+function LoadingIndicatorDemo({ indicators }) {
+  const [currentIndicator, setCurrentIndicator] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentIndicator((prevIndex) => (prevIndex + 1) % indicators.length);
+    }, 3000);
+    return () => clearInterval(interval);
+  }, [indicators.length]);
+
+  const renderIndicator = (type) => {
+    switch (type) {
+      case 'spinner':
+        return <div className="spinner"></div>;
+      case 'progress':
+        return <div className="progress-bar"><div className="progress"></div></div>;
+      case 'dots':
+        return <div className="dots"><div></div><div></div><div></div></div>;
+      default:
+        return null;
+    }
+  };
+
+  return (
+    <div className="loading-indicator-demo">
+      <div className="indicator-container">
+        {renderIndicator(indicators[currentIndicator].type)}
+      </div>
+      <p>{indicators[currentIndicator].label}</p>
+    </div>
+  );
+}
+
 function PostContent({ post }) {
   const createMarkup = (html) => ({ __html: html });
 
   const renderDemo = () => {
     if (!post.demo) return null;
 
-    const demoContent = JSON.parse(post.demo);
+    const demoContent = typeof post.demo === 'string' ? JSON.parse(post.demo) : post.demo;
     
     if (post.slug === 'accordion-pattern') {
       return (
@@ -354,6 +480,22 @@ function PostContent({ post }) {
           <h2 className="text-2xl font-bold mt-8 mb-4">Live Demo</h2>
           <p className="mb-4">Here's a live demo of form validation:</p>
           <FormValidationDemo fields={demoContent.fields} />
+        </>
+      );
+    } else if (post.slug === 'hamburger-menu-pattern') {
+      return (
+        <>
+          <h2 className="text-2xl font-bold mt-8 mb-4">Live Demo</h2>
+          <p className="mb-4">Click the hamburger icon to toggle the menu:</p>
+          <HamburgerMenuDemo menuItems={demoContent.menuItems} />
+        </>
+      );
+    } else if (post.slug === 'loading-indicators') {
+      return (
+        <>
+          <h2 className="text-2xl font-bold mt-8 mb-4">Live Demo</h2>
+          <p className="mb-4">Here's a live demo of various loading indicators:</p>
+          <LoadingIndicatorDemo indicators={demoContent} />
         </>
       );
     }
@@ -618,6 +760,78 @@ function PostContent({ post }) {
         }
         .form-validation-demo button:hover {
           background-color: #003d82;
+        }
+
+        .loading-indicator-demo {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+          height: 200px;
+          background-color: #f0f0f0;
+          border-radius: 8px;
+        }
+
+        .indicator-container {
+          height: 100px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        }
+
+        .spinner {
+          width: 50px;
+          height: 50px;
+          border: 5px solid #f3f3f3;
+          border-top: 5px solid #3498db;
+          border-radius: 50%;
+          animation: spin 1s linear infinite;
+        }
+
+        .progress-bar {
+          width: 200px;
+          height: 20px;
+          background-color: #f3f3f3;
+          border-radius: 10px;
+          overflow: hidden;
+        }
+
+        .progress {
+          width: 0;
+          height: 100%;
+          background-color: #3498db;
+          animation: progress 3s linear infinite;
+        }
+
+        .dots {
+          display: flex;
+          gap: 10px;
+        }
+
+        .dots div {
+          width: 20px;
+          height: 20px;
+          background-color: #3498db;
+          border-radius: 50%;
+          animation: bounce 1.4s infinite ease-in-out both;
+        }
+
+        .dots div:nth-child(1) { animation-delay: -0.32s; }
+        .dots div:nth-child(2) { animation-delay: -0.16s; }
+
+        @keyframes spin {
+          0% { transform: rotate(0deg); }
+          100% { transform: rotate(360deg); }
+        }
+
+        @keyframes progress {
+          0% { width: 0; }
+          100% { width: 100%; }
+        }
+
+        @keyframes bounce {
+          0%, 80%, 100% { transform: scale(0); }
+          40% { transform: scale(1); }
         }
       `}</style>
     </div>

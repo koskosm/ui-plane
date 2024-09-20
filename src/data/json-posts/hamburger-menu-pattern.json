@@ -9,5 +9,13 @@
   "thumbnail": "/images/hamburger-menu-thumb.jpg",
   "heroImage": "/images/hamburger-menu-hero.jpg",
   "emoji": "☰",
-  "backgroundColor": "#FFE4B5"
+  "backgroundColor": "#FFE4B5",
+  "demo": {
+    "menuItems": [
+      {"label": "Home", "url": "#"},
+      {"label": "About", "url": "#"},
+      {"label": "Services", "url": "#"},
+      {"label": "Contact", "url": "#"}
+    ]
+  }
 }
