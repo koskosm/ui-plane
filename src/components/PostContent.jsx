@@ -627,7 +627,7 @@ function PostContent({ post, allPosts }) {
     <div className={`post-container max-w-4xl mx-auto transition-all duration-500 ease-out ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
       <h1 className="text-3xl font-bold mb-4 text-gray-900 dark:text-white">{post.title}</h1>
       <p className="text-gray-600 dark:text-gray-400 mb-4">{post.category}</p>
-      <div className="prose max-w-none" dangerouslySetInnerHTML={createMarkup(post.content)} />
+      <div className="prose dark:prose-invert max-w-none" dangerouslySetInnerHTML={createMarkup(post.content)} />
       {renderDemo()}
       
       {/* Related Posts Section */}
