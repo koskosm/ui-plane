@@ -6,7 +6,7 @@ function Navbar() {
     <nav className="bg-[#1D2226] text-white p-4 sticky top-0 z-50">
       <div className="container max-w-7xl mx-auto px-4 flex justify-between items-center">
         <Link to="/" className="text-2xl font-bold hover:text-gray-300">
-          UI Plane
+          <span className="custom-emoji text-md" role="img" aria-label="UI Plane">✈️</span>
         </Link>
       </div>
     </nav>

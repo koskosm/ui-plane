@@ -56,7 +56,7 @@ function AppContent() {
             <div className="max-w-7xl mx-auto mt-8">
               {showHeaderContent && (
                 <div className="text-left mb-12">
-                  <p className='pb-12'><span className="custom-emoji text-8xl" role="img" aria-label="UI Plane">✈️</span></p>
+                  
                   <p className="text-6xl md:text-6xl mb-8 pb-20">
                     A UI flight checklist and collection of best design practices!
                   </p>
