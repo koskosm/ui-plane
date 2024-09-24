@@ -619,7 +619,7 @@ function PostContent({ post }) {
   };
 
   return (
-    <div className={`post-container max-w-4xl mx-auto transition-all duration-500 opacity-0 ease-out ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
+    <div className={`post-container max-w-4xl mx-auto transition-all duration-500 delay-800 ease-out ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
       <h1 className="text-3xl font-bold mb-4">{post.title}</h1>
       <p className="text-gray-500 mb-4">{post.category}</p>
       <div className="prose prose-invert max-w-none" dangerouslySetInnerHTML={createMarkup(post.content)} />

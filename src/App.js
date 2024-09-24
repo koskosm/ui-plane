@@ -27,11 +27,23 @@ function AppContent() {
   const location = useLocation();
   const [prevPathname, setPrevPathname] = useState("/");
 
+  const [currentPostEmoji, setCurrentPostEmoji] = useState(null);
+
   useEffect(() => {
     if (location.pathname !== prevPathname) {
       setPrevPathname(location.pathname);
     }
   }, [location, prevPathname]);
+
+  useEffect(() => {
+    if (location.pathname.startsWith('/post/')) {
+      const slug = location.pathname.split('/').pop();
+      const post = posts.find(p => p.slug === slug);
+      setCurrentPostEmoji(post ? post.emoji : null);
+    } else {
+      setCurrentPostEmoji(null);
+    }
+  }, [location]);
 
   const handleSearch = (term) => {
     setSearchTerm(term);
@@ -56,7 +68,7 @@ function AppContent() {
 
   return (
     <div className="App flex flex-col min-h-screen bg-[#1D2226] text-white font-basier">
-      <Navbar />
+      <Navbar postEmoji={currentPostEmoji} />
       <div className="flex-grow flex">
         <div className="flex-grow flex flex-col overflow-x-hidden">
           <main className="flex-grow px-4 lg:px-8 pb-12">
