@@ -2,10 +2,10 @@ import React from 'react';
 
 function Footer() {
   return (
-    <footer className="bg-gray-100 py-8">
-      <div className="container mx-auto px-4">
-        <div className="lg:flex lg:justify-between">
-          <div className="mb-6 lg:mb-0">
+    <footer className="bg-[#1D2226] text-white py-8">
+      <div className="container max-w-7xl mx-auto px-10">
+        <div className="lg:flex lg:justify-left">
+          <div className="mb-12 lg:mb-0 lg:grow">
             <img src="/images/skymakers.png" alt="Skymakers Logo" className="h-6 w-auto" /> {/* Changed from h-12 to h-6 */}
           </div>
           <div className="lg:max-w-sm">
