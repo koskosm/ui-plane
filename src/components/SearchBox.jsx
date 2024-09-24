@@ -32,7 +32,7 @@ function SearchBox({ onSearch, searchTerm, onClear }) {
           />
           <button
             type="submit"
-            className="px-4 py-2 text-black bg-white rounded-r-full hover:bg-white focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50"
+            className="pl-4 pr-6 py-2 text-black bg-white rounded-r-full hover:bg-white focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50"
           >
             Search
           </button>
