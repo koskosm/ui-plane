@@ -25,6 +25,13 @@ function AppContent() {
   const [isFilterOpen, setIsFilterOpen] = useState(false);
   const categories = [...new Set(posts.flatMap(post => post.tags))];
   const location = useLocation();
+  const [prevPathname, setPrevPathname] = useState("/");
+
+  useEffect(() => {
+    if (location.pathname !== prevPathname) {
+      setPrevPathname(location.pathname);
+    }
+  }, [location, prevPathname]);
 
   const handleSearch = (term) => {
     setSearchTerm(term);
@@ -57,7 +64,7 @@ function AppContent() {
               {showHeaderContent && (
                 <div className="text-left mb-12">
                   
-                  <p className="text-6xl md:text-6xl mb-8 pb-20">
+                  <p className="text-6xl md:text-6xl mb-8 pb-20 pt-20">
                     A UI flight checklist and collection of best design practices!
                   </p>
                   <div className="flex flex-col items-start">
@@ -91,30 +98,32 @@ function AppContent() {
                   </div>
                 </div>
               )}
-              <Routes>
-                <Route path="/" element={
-                  <>
-                    {searchResults ? (
-                      <>
-                        <div className="flex justify-between items-center mb-4">
-                          <h2 className="text-2xl font-bold">Search Results for "{searchTerm}"</h2>
-                          <button 
-                            onClick={handleClearSearch}
-                            className="px-3 py-1 text-sm text-white bg-gray-700 rounded hover:bg-gray-600 focus:outline-none focus:ring-2 focus:ring-gray-500 focus:ring-opacity-50"
-                          >
-                            Clear Search
-                          </button>
-                        </div>
-                        <PostList posts={searchResults} />
-                      </>
-                    ) : (
-                      <PostList posts={posts} />
-                    )}
-                  </>
-                } />
-                <Route path="/category/:tag" element={<CategoryPage posts={posts} />} />
-                <Route path="/post/:slug" element={<PostWrapper posts={posts} />} />
-              </Routes>
+              <div>
+                <Routes location={location}>
+                  <Route path="/" element={
+                    <>
+                      {searchResults ? (
+                        <>
+                          <div className="flex justify-between items-center mb-4">
+                            <h2 className="text-2xl font-bold">Search Results for "{searchTerm}"</h2>
+                            <button 
+                              onClick={handleClearSearch}
+                              className="px-3 py-1 text-sm text-white bg-gray-700 rounded hover:bg-gray-600 focus:outline-none focus:ring-2 focus:ring-gray-500 focus:ring-opacity-50"
+                            >
+                              Clear Search
+                            </button>
+                          </div>
+                          <PostList posts={searchResults} />
+                        </>
+                      ) : (
+                        <PostList posts={posts} />
+                      )}
+                    </>
+                  } />
+                  <Route path="/category/:tag" element={<CategoryPage posts={posts} />} />
+                  <Route path="/post/:slug" element={<PostWrapper posts={posts} />} />
+                </Routes>
+              </div>
             </div>
           </main>
           <div className="w-full">

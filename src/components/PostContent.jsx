@@ -443,6 +443,13 @@ function PaginationDemo({ pages }) {
 function PostContent({ post }) {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [isTooltipVisible, setIsTooltipVisible] = useState(false);
+  const [isVisible, setIsVisible] = useState(false);
+
+  useEffect(() => {
+    // Trigger the animation after a short delay
+    const timer = setTimeout(() => setIsVisible(true), 50);
+    return () => clearTimeout(timer);
+  }, []);
 
   const createMarkup = (html) => ({ __html: html });
 
@@ -612,10 +619,10 @@ function PostContent({ post }) {
   };
 
   return (
-    <div className="post-container max-w-7xl mx-auto text-white">
+    <div className={`post-container max-w-4xl mx-auto transition-all duration-500 opacity-0 ease-out ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
       <h1 className="text-3xl font-bold mb-4">{post.title}</h1>
       <p className="text-gray-500 mb-4">{post.category}</p>
-      <div className="prose max-w-none text-white" dangerouslySetInnerHTML={createMarkup(post.content)} />
+      <div className="prose prose-invert max-w-none" dangerouslySetInnerHTML={createMarkup(post.content)} />
       {renderDemo()}
       <style jsx>{`
         .accordion-item {
