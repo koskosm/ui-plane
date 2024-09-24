@@ -5,9 +5,21 @@
   font-style: normal;
 }
 
+@font-face {
+    font-family: 'basier_square_regular';
+    src: url('./fonts/basiersquare-regular-webfont.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
 .custom-emoji {
     font-family: "Noto Emoji", sans-serif;
     font-optical-sizing: auto;
     font-weight: normal;
     font-style: normal;
+}
+
+.font-basier {
+    font-family: 'basier_square_regular', sans-serif;
 }

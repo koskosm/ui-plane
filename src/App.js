@@ -30,22 +30,23 @@ function App() {
 
   return (
     <Router>
-      <div className="App flex flex-col min-h-screen bg-[#1D2226] text-white">
+      <div className="App flex flex-col min-h-screen bg-[#1D2226] text-white font-basier">
         <Navbar />
         <div className="flex-grow flex">
           <div className="flex-grow flex flex-col overflow-x-hidden">
             <main className="flex-grow px-4 lg:px-8 pb-12">
-              <div className="max-w-6xl mx-auto mt-8">
+              <div className="max-w-7xl mx-auto mt-8">
                 <Routes>
                   <Route path="/" element={
                     <>
-                      <div className="text-center mb-12">
-                        <h1 className="text-4xl md:text-5xl font-bold mb-4">Welcome to UI Plane</h1>
-                        <p className="text-xl md:text-2xl text-gray-400 mb-8">
+                      <div className="text-left mb-12">
+                      <p className='pb-12'><span className="custom-emoji text-8xl" role="img" aria-label="UI Plane">✈️</span></p>
+                       
+                        <p className="text-6xl md:text-6xl mb-8 pb-20">
                           A UI flight checklist and collection of best design practices!
-                          <span className="custom-emoji" role="img" aria-label="Checklist">✅</span>
                         </p>
-                        <div className="flex justify-center">
+
+                        <div className="flex justify-start text-left">
                           <SearchBox onSearch={handleSearch} searchTerm={searchTerm} onClear={handleClearSearch} />
                         </div>
                       </div>
