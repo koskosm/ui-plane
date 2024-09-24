@@ -8,6 +8,7 @@ import CategoryPage from './components/CategoryPage';
 import SearchBox from './components/SearchBox';
 import PlaneAnimation from './components/PlaneAnimation';
 import Footer from './components/Footer'; // Add this import
+import './customFonts.css'; // Import the custom fonts CSS
 
 function App() {
   const [searchResults, setSearchResults] = useState(null);
@@ -48,7 +49,10 @@ function App() {
                     <>
                       <div className="text-center mb-12">
                         <h1 className="text-4xl md:text-5xl font-bold mb-4">Welcome to UI Plane</h1>
-                        <p className="text-xl md:text-2xl text-gray-400 mb-8">A UI flight checklist and collection of best design practices!</p>
+                        <p className="text-xl md:text-2xl text-gray-400 mb-8">
+                          A UI flight checklist and collection of best design practices!
+                          <span className="custom-emoji" role="img" aria-label="Checklist">✅</span>
+                        </p>
                         <div className="flex justify-center">
                           <SearchBox onSearch={handleSearch} searchTerm={searchTerm} onClear={handleClearSearch} />
                         </div>

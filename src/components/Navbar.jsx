@@ -20,7 +20,7 @@ function Navbar() {
     <nav className="bg-[#1D2226] text-white p-4 sticky top-0 z-50 shadow-md">
       <div className="container mx-auto flex justify-between items-center">
         <Link to="/" className="text-2xl font-bold hover:text-gray-300">
-          <span className="mr-2 header-plane" role="img" aria-label="UI Plane">✈️</span>
+          <span className="mr-2 header-plane custom-emoji" role="img" aria-label="UI Plane">✈️</span>
           UI Plane
         </Link>
         
@@ -29,7 +29,7 @@ function Navbar() {
             onClick={toggleDropdown}
             className="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 focus:outline-none"
           >
-            Categories
+            Categories <span className="custom-emoji" role="img" aria-label="Categories">📚</span>
           </button>
           
           {isDropdownOpen && (
@@ -46,7 +46,7 @@ function Navbar() {
                       }`}
                       onClick={() => setIsDropdownOpen(false)}
                     >
-                      {category}
+                      {category} <span className="custom-emoji" role="img" aria-label="Category">🏷️</span>
                     </Link>
                   </li>
                 ))}

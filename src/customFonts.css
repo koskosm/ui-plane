@@ -1,0 +1,13 @@
+@font-face {
+  font-family: "Noto Emoji";
+  src: url('./fonts/NotoEmoji-VariableFont_wght.ttf');
+  font-weight: normal;
+  font-style: normal;
+}
+
+.custom-emoji {
+    font-family: "Noto Emoji", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: normal;
+    font-style: normal;
+}
