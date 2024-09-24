@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { BrowserRouter as Router, Route, Routes, Link, useParams } from 'react-router-dom';
+import React, { useState, useEffect } from 'react';
+import { BrowserRouter as Router, Route, Routes, Link, useParams, useLocation } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import PostList from './components/PostList';
 import PostContent from './components/PostContent';
@@ -8,6 +8,16 @@ import CategoryPage from './components/CategoryPage';
 import SearchBox from './components/SearchBox';
 import Footer from './components/Footer';
 import './customFonts.css';
+
+function ScrollToTop() {
+  const { pathname } = useLocation();
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]);
+
+  return null;
+}
 
 function App() {
   const [searchResults, setSearchResults] = useState(null);
@@ -30,6 +40,7 @@ function App() {
 
   return (
     <Router>
+      <ScrollToTop />
       <div className="App flex flex-col min-h-screen bg-[#1D2226] text-white font-basier">
         <Navbar />
         <div className="flex-grow flex">
