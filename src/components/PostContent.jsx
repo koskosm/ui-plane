@@ -612,10 +612,10 @@ function PostContent({ post }) {
   };
 
   return (
-    <div className="post-container max-w-4xl mx-auto">
+    <div className="post-container max-w-7xl mx-auto text-white">
       <h1 className="text-3xl font-bold mb-4">{post.title}</h1>
       <p className="text-gray-500 mb-4">{post.category}</p>
-      <div className="prose max-w-none" dangerouslySetInnerHTML={createMarkup(post.content)} />
+      <div className="prose max-w-none text-white" dangerouslySetInnerHTML={createMarkup(post.content)} />
       {renderDemo()}
       <style jsx>{`
         .accordion-item {
