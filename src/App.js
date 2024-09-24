@@ -22,6 +22,7 @@ function ScrollToTop() {
 function App() {
   const [searchResults, setSearchResults] = useState(null);
   const [searchTerm, setSearchTerm] = useState('');
+  const categories = [...new Set(posts.flatMap(post => post.tags))];
 
   const handleSearch = (term) => {
     setSearchTerm(term);
@@ -51,14 +52,24 @@ function App() {
                   <Route path="/" element={
                     <>
                       <div className="text-left mb-12">
-                      <p className='pb-12'><span className="custom-emoji text-8xl" role="img" aria-label="UI Plane">✈️</span></p>
-                       
+                        <p className='pb-12'><span className="custom-emoji text-8xl" role="img" aria-label="UI Plane">✈️</span></p>
                         <p className="text-6xl md:text-6xl mb-8 pb-20">
                           A UI flight checklist and collection of best design practices!
                         </p>
-
-                        <div className="flex justify-start text-left">
+                        <div className="flex flex-col items-start">
                           <SearchBox onSearch={handleSearch} searchTerm={searchTerm} onClear={handleClearSearch} />
+                          <p className="text-sm">Categories</p>
+                          <div className="mt-4 flex flex-wrap gap-2">
+                            {categories.map((category, index) => (
+                              <Link
+                                key={index}
+                                to={`/category/${encodeURIComponent(category)}`}
+                                className="text-sm px-3 py-1 border border-white text-white rounded-full hover:bg-white hover:text-black transition-colors duration-200"
+                              >
+                                {category}
+                              </Link>
+                            ))}
+                          </div>
                         </div>
                       </div>
                       {searchResults ? (
@@ -79,7 +90,6 @@ function App() {
                       )}
                     </>
                   } />
-                  <Route path="/categories" element={<CategoryList posts={posts} />} />
                   <Route path="/category/:tag" element={<CategoryPage posts={posts} />} />
                   <Route path="/post/:slug" element={<PostWrapper posts={posts} />} />
                 </Routes>
@@ -104,27 +114,6 @@ function PostWrapper({ posts }) {
   }
 
   return <PostContent post={post} />;
-}
-
-function CategoryList({ posts }) {
-  const categories = [...new Set(posts.flatMap(post => post.tags))];
-
-  return (
-    <div>
-      <h2 className="text-2xl font-bold mb-4">View by Category</h2>
-      <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-        {categories.map(category => (
-          <Link
-            key={category}
-            to={`/category/${category}`}
-            className="bg-gray-100 hover:bg-gray-200 rounded-lg p-4 text-center"
-          >
-            {category}
-          </Link>
-        ))}
-      </div>
-    </div>
-  );
 }
 
 export default App;
