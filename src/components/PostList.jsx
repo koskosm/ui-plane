@@ -12,8 +12,8 @@ function PostList({ posts, category, excludeLatest }) {
   return (
     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
       {filteredPosts.map(post => (
-        <Link to={`/post/${post.slug}`} key={post.id} className="rounded-lg overflow-hidden duration-300 pt-8 pb-8 px-4 bg-[#21272b] hover:bg-[#1a1c1e]">
-          <div className="relative w-full pb-[20%]"> {/* 16:9 aspect ratio */}
+        <Link to={`/post/${post.slug}`} key={post.id} className="rounded-lg overflow-hidden duration-300 pt-8 pb-8 px-4 bg-gray-50 dark:bg-[#21272b] dark:hover:bg-[#1a1c1e]">
+          <div className="relative w-full pb-[20%]"> 
             <div 
               className="absolute inset-0 flex items-center justify-left pl-2"
             >
@@ -28,7 +28,7 @@ function PostList({ posts, category, excludeLatest }) {
                 <Link
                   key={tag}
                   to={`/category/${tag}`}
-                  className="inline-block border-white rounded-full px-3 py-1 text-sm font-semibold text-white border mr-2 mb-2"
+                  className="inline-block dark:border-white rounded-full px-3 py-1 text-sm font-semibold dark:text-white border mr-2 mb-2"
                   onClick={(e) => e.stopPropagation()}
                 >
                   {tag}

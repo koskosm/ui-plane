@@ -8,6 +8,7 @@ import CategoryPage from './components/CategoryPage';
 import SearchBox from './components/SearchBox';
 import Footer from './components/Footer';
 import './customFonts.css';
+import { ThemeProvider } from './contexts/ThemeContext';
 
 function ScrollToTop() {
   const { pathname } = useLocation();
@@ -67,7 +68,7 @@ function AppContent() {
   const showHeaderContent = !location.pathname.startsWith('/post/');
 
   return (
-    <div className="App flex flex-col min-h-screen bg-[#1D2226] text-white font-basier">
+    <div className="App flex flex-col min-h-screen bg-whitedark:bg-[#1D2226] dark:text-white font-basier">
       <Navbar postEmoji={currentPostEmoji} />
       <div className="flex-grow flex">
         <div className="flex-grow flex flex-col overflow-x-hidden">
@@ -85,7 +86,7 @@ function AppContent() {
                       <div className="relative ml-4 grow justify-end flex">
                         <button
                           onClick={toggleFilter}
-                          className="px-4 py-2 border border-white text-white rounded-full hover:bg-white hover:text-black transition-colors duration-200"
+                          className="px-4 py-2 dark:border dark:border-white bg-gray-200 dark:bg-white dark:text-black rounded-full hover:bg-white hover:text-black transition-colors duration-200"
                         >
                           Filter
                         </button>
@@ -160,10 +161,12 @@ function PostWrapper({ posts }) {
 
 function App() {
   return (
-    <Router>
-      <ScrollToTop />
-      <AppContent />
-    </Router>
+    <ThemeProvider>
+      <Router>
+        <ScrollToTop />
+        <AppContent />
+      </Router>
+    </ThemeProvider>
   );
 }
 

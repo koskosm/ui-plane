@@ -1,13 +1,14 @@
 module.exports = {
+  darkMode: 'class',
   content: [
     "./src/**/*.{js,jsx,ts,tsx}",
   ],
   theme: {
     extend: {
       textColor: {
-        DEFAULT: '#FFFFFF', // Default text color
-        body: '#FFFFFF',    // Text color for body text
-        heading: '#FFFFFF', // Text color for headings
+        DEFAULT: '#000000', // Default text color
+        body: '#000000',    // Text color for body text
+        heading: '#000000', // Text color for headings
       },
       typography: (theme) => ({
         DEFAULT: {
