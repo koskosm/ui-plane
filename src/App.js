@@ -22,6 +22,7 @@ function ScrollToTop() {
 function App() {
   const [searchResults, setSearchResults] = useState(null);
   const [searchTerm, setSearchTerm] = useState('');
+  const [isFilterOpen, setIsFilterOpen] = useState(false);
   const categories = [...new Set(posts.flatMap(post => post.tags))];
 
   const handleSearch = (term) => {
@@ -37,6 +38,10 @@ function App() {
   const handleClearSearch = () => {
     setSearchResults(null);
     setSearchTerm('');
+  };
+
+  const toggleFilter = () => {
+    setIsFilterOpen(!isFilterOpen);
   };
 
   return (
@@ -57,18 +62,32 @@ function App() {
                           A UI flight checklist and collection of best design practices!
                         </p>
                         <div className="flex flex-col items-start">
-                          <SearchBox onSearch={handleSearch} searchTerm={searchTerm} onClear={handleClearSearch} />
-                          <p className="text-sm">Categories</p>
-                          <div className="mt-4 flex flex-wrap gap-2">
-                            {categories.map((category, index) => (
-                              <Link
-                                key={index}
-                                to={`/category/${encodeURIComponent(category)}`}
-                                className="text-sm px-3 py-1 border border-white text-white rounded-full hover:bg-white hover:text-black transition-colors duration-200"
+                          <div className="flex items-center w-full">
+                            <SearchBox onSearch={handleSearch} searchTerm={searchTerm} onClear={handleClearSearch} />
+                            <div className="relative ml-4 grow justify-end flex">
+                              <button
+                                onClick={toggleFilter}
+                                className="px-4 py-2 border border-white text-white rounded-full hover:bg-white hover:text-black transition-colors duration-200"
                               >
-                                {category}
-                              </Link>
-                            ))}
+                                Filter
+                              </button>
+                              {isFilterOpen && (
+                                <div className="absolute right-0 mt-12 w-64 bg-white text-black rounded-md shadow-lg z-10 max-h-60 overflow-scroll">
+                                  <div className="py-2">
+                                    {categories.map((category, index) => (
+                                      <Link
+                                        key={index}
+                                        to={`/category/${encodeURIComponent(category)}`}
+                                        className="block px-4 py-2 text-sm hover:bg-gray-100"
+                                        onClick={() => setIsFilterOpen(false)}
+                                      >
+                                        {category}
+                                      </Link>
+                                    ))}
+                                  </div>
+                                </div>
+                              )}
+                            </div>
                           </div>
                         </div>
                       </div>

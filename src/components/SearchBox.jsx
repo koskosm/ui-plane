@@ -21,7 +21,7 @@ function SearchBox({ onSearch, searchTerm, onClear }) {
 
   return (
     <div className="w-full lg:w-2/3 font-basier">
-      <form onSubmit={handleSubmit} className="mb-8">
+      <form onSubmit={handleSubmit}>
         <div className="flex">
           <input
             type="text"
