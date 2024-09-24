@@ -6,7 +6,7 @@ function Footer() {
       <div className="container max-w-7xl mx-auto px-10">
         <div className="lg:flex lg:justify-left">
           <div className="mb-12 lg:mb-0 lg:grow">
-            <img src="/images/skymakers.png" alt="Skymakers Logo" className="h-6 w-auto" /> {/* Changed from h-12 to h-6 */}
+            <img src="/images/skymakers.png" alt="Skymakers Logo" className="w-40 h-auto" /> 
           </div>
           <div className="lg:max-w-sm">
             <p className="text-sm text-gray-600 mb-4">
