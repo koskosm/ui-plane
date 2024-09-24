@@ -3,12 +3,12 @@ import React from 'react';
 function Footer() {
   return (
     <footer className="bg-[#1D2226] text-white py-8">
-      <div className="container max-w-7xl mx-auto px-4 md:px-4">
-        <div className="lg:flex lg:justify-left">
-          <div className="mb-12 lg:mb-0 lg:grow">
+      <div className="container max-w-7xl mx-auto px-4 md:px-8">
+        <div className="justify-left">
+          <div className="mb-12">
             <img src="/images/skymakers.png" alt="Skymakers Logo" className="w-40 h-auto" /> 
           </div>
-          <div className="lg:max-w-sm">
+          <div className="max-w">
             <p className="text-sm text-gray-600 mb-4">
               For developers, by developers; We enable business to transform in the digital world while enhancing and protecting users' security and privacy
             </p>
