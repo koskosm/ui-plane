@@ -17,7 +17,7 @@ function Navbar() {
   };
 
   return (
-    <nav className="bg-[#1D2226] text-white p-4 sticky top-0 z-50 shadow-md">
+    <nav className="bg-[#1D2226] text-white p-4 sticky top-0 z-50">
       <div className="container mx-auto flex justify-between items-center">
         <Link to="/" className="text-2xl font-bold hover:text-gray-300">
           <span className="mr-2 header-plane custom-emoji" role="img" aria-label="UI Plane">✈️</span>

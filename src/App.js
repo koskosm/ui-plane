@@ -1,19 +1,17 @@
-import React, { useState, useEffect } from 'react';
-import { BrowserRouter as Router, Route, Routes, useParams, Link, useLocation } from 'react-router-dom';
+import React, { useState } from 'react';
+import { BrowserRouter as Router, Route, Routes, Link, useParams } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import PostList from './components/PostList';
 import PostContent from './components/PostContent';
 import { posts } from './data/posts';
 import CategoryPage from './components/CategoryPage';
 import SearchBox from './components/SearchBox';
-import PlaneAnimation from './components/PlaneAnimation';
-import Footer from './components/Footer'; // Add this import
-import './customFonts.css'; // Import the custom fonts CSS
+import Footer from './components/Footer';
+import './customFonts.css';
 
 function App() {
   const [searchResults, setSearchResults] = useState(null);
   const [searchTerm, setSearchTerm] = useState('');
-  const [currentPost, setCurrentPost] = useState(null);
 
   const handleSearch = (term) => {
     setSearchTerm(term);
@@ -35,13 +33,7 @@ function App() {
       <div className="App flex flex-col min-h-screen bg-[#1D2226] text-white">
         <Navbar />
         <div className="flex-grow flex">
-          {/* Main content wrapper */}
           <div className="flex-grow flex flex-col overflow-x-hidden">
-            {/* Plane animation container */}
-            <div className="w-full">
-              <PlaneAnimation currentPost={currentPost} />
-            </div>
-            {/* Main content */}
             <main className="flex-grow px-4 lg:px-8 pb-12">
               <div className="max-w-6xl mx-auto mt-8">
                 <Routes>
@@ -77,11 +69,10 @@ function App() {
                   } />
                   <Route path="/categories" element={<CategoryList posts={posts} />} />
                   <Route path="/category/:tag" element={<CategoryPage posts={posts} />} />
-                  <Route path="/post/:slug" element={<PostPage posts={posts} setCurrentPost={setCurrentPost} />} />
+                  <Route path="/post/:slug" element={<PostWrapper posts={posts} />} />
                 </Routes>
               </div>
             </main>
-            {/* Footer container */}
             <div className="w-full">
               <Footer />
             </div>
@@ -92,21 +83,9 @@ function App() {
   );
 }
 
-function PostPage({ posts, setCurrentPost }) {
+function PostWrapper({ posts }) {
   const { slug } = useParams();
   const post = posts.find(p => p.slug === slug);
-  const location = useLocation();
-
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, [location]);
-
-  useEffect(() => {
-    if (post) {
-      setCurrentPost(post);
-    }
-    return () => setCurrentPost(null);
-  }, [post, setCurrentPost]);
 
   if (!post) {
     return <div>Post not found</div>;
