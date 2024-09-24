@@ -31,11 +31,9 @@ function App() {
 
   return (
     <Router>
-      <div className="App flex flex-col min-h-screen">
+      <div className="App flex flex-col min-h-screen bg-[#1D2226] text-white">
         <Navbar />
         <div className="flex-grow flex">
-          {/* Left navigation spacer - only visible on large screens */}
-          <div className="hidden lg:block w-64 flex-shrink-0"></div>
           {/* Main content wrapper */}
           <div className="flex-grow flex flex-col overflow-x-hidden">
             {/* Plane animation container */}
@@ -43,14 +41,14 @@ function App() {
               <PlaneAnimation currentPost={currentPost} />
             </div>
             {/* Main content */}
-            <main className="flex-grow px-4 lg:px-8 pb-12"> {/* Adjusted padding */}
+            <main className="flex-grow px-4 lg:px-8 pb-12">
               <div className="max-w-6xl mx-auto mt-8">
                 <Routes>
                   <Route path="/" element={
                     <>
                       <div className="text-center mb-12">
                         <h1 className="text-4xl md:text-5xl font-bold mb-4">Welcome to UI Plane</h1>
-                        <p className="text-xl md:text-2xl text-gray-600 mb-8">A UI flight checklist and collection of best design practices!</p>
+                        <p className="text-xl md:text-2xl text-gray-400 mb-8">A UI flight checklist and collection of best design practices!</p>
                         <div className="flex justify-center">
                           <SearchBox onSearch={handleSearch} searchTerm={searchTerm} onClear={handleClearSearch} />
                         </div>
@@ -61,7 +59,7 @@ function App() {
                             <h2 className="text-2xl font-bold">Search Results for "{searchTerm}"</h2>
                             <button 
                               onClick={handleClearSearch}
-                              className="px-3 py-1 text-sm text-white bg-gray-500 rounded hover:bg-gray-600 focus:outline-none focus:ring-2 focus:ring-gray-500 focus:ring-opacity-50"
+                              className="px-3 py-1 text-sm text-white bg-gray-700 rounded hover:bg-gray-600 focus:outline-none focus:ring-2 focus:ring-gray-500 focus:ring-opacity-50"
                             >
                               Clear Search
                             </button>

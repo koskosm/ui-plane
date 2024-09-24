@@ -1,8 +1,9 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { posts } from '../data/posts';
 
 function Navbar() {
+  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const categories = [...new Set(posts.flatMap(post => post.tags))];
   const location = useLocation();
 
@@ -11,46 +12,50 @@ function Navbar() {
     return decodedPathname === `/category/${category}`;
   };
 
-  return (
-    <>
-      {/* Top nav bar */}
-      <nav className="bg-white text-black p-4 sticky top-0 z-50 shadow-md">
-        <div className="container mx-auto lg:max-w-none lg:mx-0 pr-4 lg:pr-8 flex justify-between items-center">
-          <Link to="/" className="text-2xl font-bold hover:text-gray-700">
-            <span className="mr-2 header-plane" role="img" aria-label="UI Plane">✈️</span>
-            UI Plane
-          </Link>
-          
-          {/* Show category link only on medium and small screens */}
-          <ul className="flex lg:hidden space-x-4">
-            <li><Link to="/categories" className="hover:text-gray-700">View by Category</Link></li>
-          </ul>
-        </div>
-      </nav>
+  const toggleDropdown = () => {
+    setIsDropdownOpen(!isDropdownOpen);
+  };
 
-      {/* Left-side navigation menu - visible only on large screens */}
-      <div className="fixed inset-y-0 left-0 w-64 bg-white shadow-lg z-40 overflow-y-auto pt-16 hidden lg:block">
-        <div className="p-4">
-          <h2 className="text-xl font-bold mb-4">Categories</h2>
-          <ul className="space-y-2">
-            {categories.map((category, index) => (
-              <li key={index}>
-                <Link
-                  to={`/category/${encodeURIComponent(category)}`}
-                  className={`block py-1 px-2 rounded transition-colors ${
-                    isActiveCategory(category)
-                      ? 'bg-blue-500 text-white'
-                      : 'hover:bg-blue-100'
-                  }`}
-                >
-                  {category}
-                </Link>
-              </li>
-            ))}
-          </ul>
+  return (
+    <nav className="bg-[#1D2226] text-white p-4 sticky top-0 z-50 shadow-md">
+      <div className="container mx-auto flex justify-between items-center">
+        <Link to="/" className="text-2xl font-bold hover:text-gray-300">
+          <span className="mr-2 header-plane" role="img" aria-label="UI Plane">✈️</span>
+          UI Plane
+        </Link>
+        
+        <div className="relative">
+          <button
+            onClick={toggleDropdown}
+            className="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 focus:outline-none"
+          >
+            Categories
+          </button>
+          
+          {isDropdownOpen && (
+            <div className="absolute right-0 mt-2 w-64 bg-[#2D3236] rounded-md shadow-lg z-50">
+              <ul className="py-2">
+                {categories.map((category, index) => (
+                  <li key={index}>
+                    <Link
+                      to={`/category/${encodeURIComponent(category)}`}
+                      className={`block px-4 py-2 text-sm ${
+                        isActiveCategory(category)
+                          ? 'bg-blue-500 text-white'
+                          : 'text-white hover:bg-[#3D4246]'
+                      }`}
+                      onClick={() => setIsDropdownOpen(false)}
+                    >
+                      {category}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          )}
         </div>
       </div>
-    </>
+    </nav>
   );
 }
 
