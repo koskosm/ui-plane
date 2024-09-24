@@ -2,6 +2,7 @@ import React, { useState, useEffect, useRef } from 'react';
 import * as d3 from 'd3';
 import TabsDemo from './TabsDemo';
 import TooltipDemo from './TooltipDemo';
+import RelatedPostCard from './RelatedPostCard';
 
 function AccordionItem({ header, content }) {
   const [isOpen, setIsOpen] = useState(false);
@@ -440,7 +441,7 @@ function PaginationDemo({ pages }) {
   );
 }
 
-function PostContent({ post }) {
+function PostContent({ post, allPosts }) {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [isTooltipVisible, setIsTooltipVisible] = useState(false);
   const [isVisible, setIsVisible] = useState(false);
@@ -452,6 +453,10 @@ function PostContent({ post }) {
   }, []);
 
   const createMarkup = (html) => ({ __html: html });
+
+  const relatedPosts = allPosts
+    .filter(p => p.category === post.category && p.slug !== post.slug)
+    .slice(0, 3);
 
   const renderDemo = () => {
     if (!post.demo) return null;
@@ -619,11 +624,24 @@ function PostContent({ post }) {
   };
 
   return (
-    <div className={`post-container max-w-4xl mx-auto transition-all duration-500 delay-800 ease-out ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
+    <div className={`post-container max-w-4xl mx-auto transition-all duration-500 ease-out ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
       <h1 className="text-3xl font-bold mb-4">{post.title}</h1>
       <p className="text-gray-500 mb-4">{post.category}</p>
       <div className="prose prose-invert max-w-none" dangerouslySetInnerHTML={createMarkup(post.content)} />
       {renderDemo()}
+      
+      {/* Related Posts Section */}
+      {relatedPosts.length > 0 && (
+        <div className="mt-16">
+          <h2 className="text-2xl font-bold mb-6">Related Posts</h2>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            {relatedPosts.map(relatedPost => (
+              <RelatedPostCard key={relatedPost.slug} post={relatedPost} />
+            ))}
+          </div>
+        </div>
+      )}
+      
       <style jsx>{`
         .accordion-item {
           border: 1px solid #ddd;

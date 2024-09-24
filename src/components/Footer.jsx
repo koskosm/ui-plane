@@ -3,7 +3,7 @@ import React from 'react';
 function Footer() {
   return (
     <footer className="bg-[#1D2226] text-white py-8">
-      <div className="container max-w-7xl mx-auto px-10">
+      <div className="container max-w-7xl mx-auto px-4 md:px-4">
         <div className="lg:flex lg:justify-left">
           <div className="mb-12 lg:mb-0 lg:grow">
             <img src="/images/skymakers.png" alt="Skymakers Logo" className="w-40 h-auto" /> 

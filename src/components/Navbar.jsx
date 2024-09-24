@@ -17,8 +17,8 @@ function Navbar({ postEmoji }) {
   }, [isPostPage]);
 
   return (
-    <nav className="bg-[#1D2226] text-white p-4 sticky top-0 z-50">
-      <div className="container max-w-7xl mx-auto px-4 flex items-center">
+    <nav className="bg-[#1D2226] text-white sticky pt-4 pb-4 top-0 z-50 ">
+      <div className="container max-w-7xl mx-auto md:px-4 px-2  flex items-center">
         <Link to="/" className="text-2xl font-bold hover:text-gray-300 flex items-center">
           <span className="custom-emoji" role="img" aria-label="UI Plane">✈️</span>
         </Link>

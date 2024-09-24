@@ -155,7 +155,7 @@ function PostWrapper({ posts }) {
     return <div>Post not found</div>;
   }
 
-  return <PostContent post={post} />;
+  return <PostContent post={post} allPosts={posts} />;
 }
 
 function App() {
