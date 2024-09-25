@@ -13,6 +13,15 @@
 
 }
 
+@font-face {
+    font-family: 'basier_square_regular';
+    src: url('./fonts/basiersquare-medium-webfont.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+
+}
+
+
 .custom-emoji {
     font-family: "Noto Emoji", sans-serif;
     font-optical-sizing: auto;

@@ -77,7 +77,7 @@ function AppContent() {
               {showHeaderContent && (
                 <div className="text-left mb-12">
                   
-                  <p className="text-3xl md:text-6xl mb-8 pb-20 pt-20">
+                  <p className="text-3xl md:text-6xl mb-8 pb-20 pt-20 font-bold">
                     A UI/UX flight checklist and collection of best design practices!
                   </p>
                   <div className="flex flex-col items-start">
